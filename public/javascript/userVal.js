@@ -167,7 +167,7 @@ function userPass_verify(){
 
     else{
         pass.style.border = '2px solid red';
-        passwordError('Password should contain atlease a \n number, letter and special character');
+        passwordError('Password should contain atlease a number, \n letter and special character');
         pass.focus();
         return false;
     }
@@ -176,14 +176,14 @@ function userPass_verify(){
 // Password confirmation field
 
 function userPassconf_verify (){
-    if(passConf.value != ''){
+    if(passConf.value != '' && passConf.value == pass.value){
         passConf.style.border = '1px solid green';
-        confirmPasswordError('');
+        confirmPasswordError('password Match');
         return true;
     }
     else{
         passConf.style.border = '2px solid red';
-        confirmPasswordError('Please insert a valid password')
+        confirmPasswordError('Password mismatch')
         return false;
     }
 }

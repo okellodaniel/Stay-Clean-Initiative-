@@ -7,25 +7,25 @@ html(lang='en')
     link(rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet' href='/bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet' href='/styles/stylesheet.css')
-
-    script(src='/javascript/loginVal.js')
     title= `${title}`
   body
     .container.loginCont.d-flex.justify-content-center
       .row.log-row
         .col.log-col
-          form#logform(action="/user/login" name="login_form" method="POST" onsubmit="return validate()")
+          form#logform(action="/user/login" name="signInForm" method="POST" onsubmit="return validate()")
             .logo#loginLogo
               img(src="/images/00541cae-2e5c-4e01-a735-f2837cc72dde_200x200 (1).png" alt="logo")
             .mb-3
               label.form-label(for="username") Username
-              input#username.form-control.enp(type="username" name="user_Id")
+              input#username.form-control.enp(type="username" name="logId")
               small#userErr
             .mb-3
               label.form-label(for="userpassword") Password
-              input#userpassword.form-control.enp(type="password" name="user_Code")
+              input#userpassword.form-control.enp(type="password" name="logPass")
               span#log_PassW
             button.btn.btn-primary.logbt(type="submit") Login
           span#reg-link
             a(href="/user/register") Not registered?, click here
+  
+  script(src='/javascript/loginVal.js')
     
