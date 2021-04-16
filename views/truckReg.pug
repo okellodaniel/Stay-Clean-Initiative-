@@ -1,0 +1,28 @@
+extends layout 
+block content 
+  body
+    .container.d-flex.justify-content-center
+      form(action='/truck/' method='POST' name='truckReg' onsubmit="return validate()")
+        .row#truckRow
+          .col-md-12.headingTR#trucklabel
+            | Truck Registration
+          #col1.col-md-4.col-lg-3
+            label(for='manufacturer') Truck Make
+            input#manufacturer.form-control.form-truck(type='text' name='truckMake' placeholder='Actros')
+            span#t_make
+          #col2.col-md-4.col-lg-4
+            label(for='model') Truck Model
+            input#model.form-control.form-truck(type='text' name='truckModel' placeholder='A3321')
+            span#t_model
+          #col3.col-md-4.col-lg-5
+            label(for='Registration') Truck Registration Number
+            input#Registration.form-control.form-truck(type='text' name='truckRegNo' placeholder='UBF 111X')
+            span#t_reg
+          .col-lg-4
+            label(for='code') Truck Code Number
+            input#code.form-control.form-truck(type='text' name='truckCode' placeholder='2313312')
+            span#tCode
+          .col-md-12
+            button.btn.btn-primary#truckbtn(type='submit') Register
+
+      script(src="/javascript/truckVal.js")

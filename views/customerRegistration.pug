@@ -1,0 +1,47 @@
+extends layout 
+block content
+  .container.container-cust
+    form(action='/customer/' method='POST' name='customerReg' onsubmit="return validate()")
+      .row.row_X
+        .col-md-12.heading.headingCust.col-md-12_Cust
+          | Customer Registration
+        .col-md-6.col-lg-5.col-md-6_Cust
+          label(for='names') Customer's Name
+          input#names.form-control.form-control-Cust(type='text' name='customerName' placeholder="Customer's Name")
+          span#custom_Name
+        .col-md-6.col-lg-3.col-md-6_Cust
+          label(for='location') Location
+          input#customerLocation.form-control.form-control-Cust(type='text' name='location' placeholder='Location')
+          span#cusLoc
+        .col-md-6.col-lg-4.col-md-6_Cust
+          label(for='nationalid') National Identity Number
+          input#nationalid.form-control.form-control-Cust(type='text' name='national_Id' placeholder='NIN')
+          span#cNIN
+        .col-md-6.col-lg-12.col-md-6_Cust
+          label(for='telephone') Phone Number
+          input#telephone.form-control.form-control-Cust(type='text' name='phone_Number' placeholder='Phone number')
+          span#cTel
+        .col-md-4.form-group
+          label(for='exampleFormControlSelect1') Type of Service
+          select#exampleFormControlSelect1.form-control.form-control-Cust(name='serviceType')
+            option(value='Garbage') Garbage Collection
+            option(value='Seawage') Sewage Collection
+            span#cusServ
+        .col-md-4.form-group
+          label(for='exampleFormControlSelect1') Trucks Needed
+          select#exampleFormControlSelect1.form-control.form-control-Cust(name='truckNumber')
+            option(value='1') 1
+            option(value='2') 2
+            option(value='3') 3
+            option(value='4') 4
+            option(value='5') 5
+            span#trucks_E
+        .col-md-4.form-group
+          label(for='exampleFormControlSelect1') Service Type
+          select#exampleFormControlSelect1.form-control.form-control-Cust(name='paymentType')
+            option(value='subsciption') Subscription
+            option(value='onetime') One-time
+            span#pay_Err
+        .col-md-12.col-md-12_Cust
+          button#btnCustomer.btn.btn-secondary.d-flex.justify-content-end(type='submit') Register
+    script(src="/javascript/custValid.js")

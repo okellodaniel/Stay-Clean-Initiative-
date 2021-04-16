@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/styles/stylesheet.css')
+
+    script(src='/javascript/loginVal.js')
+    title= `${title}`
+  body
+    .container.loginCont.d-flex.justify-content-center
+      .row.log-row
+        .col.log-col
+          form#logform(action="/user/login" name="login_form" method="POST" onsubmit="return validate()")
+            .logo#loginLogo
+              img(src="/images/00541cae-2e5c-4e01-a735-f2837cc72dde_200x200 (1).png" alt="logo")
+            .mb-3
+              label.form-label(for="username") Username
+              input#username.form-control.enp(type="username" name="user_Id")
+              small#userErr
+            .mb-3
+              label.form-label(for="userpassword") Password
+              input#userpassword.form-control.enp(type="password" name="user_Code")
+              span#log_PassW
+            button.btn.btn-primary.logbt(type="submit") Login
+          span#reg-link
+            a(href="/user/register") Not registered?, click here
+    

@@ -1,0 +1,34 @@
+extends layout 
+block content
+  .panel
+    .panel-head
+      h6.title Customer List
+    span.newCust
+      a(href='/customer/') Register new Customer
+    .panel-body
+      table.zebra
+        tbody
+          tr
+            th Customer Names
+            th Location
+            th Trucks needed
+            th Telephone
+            th Service
+            th NIN
+            th Payment
+            th Action
+          if customers.length 
+          each customer in customers  
+            tr
+              td  #{customer.customerName}  
+              td  #{customer.location}
+              td  #{customer.truckNumber}
+              td  #{customer.phoneNumber}
+              td  #{customer.serviceType} 
+              td  #{customer.nationalId}
+              td  #{customer.paymentType}
+              td.action
+                a.remove(href='/customer/delete'+customer._id)
+                  ion-icon(name='trash-outline')
+                a.edit(href='/customer/update'+customer._id)
+                  ion-icon(name='create-outline')

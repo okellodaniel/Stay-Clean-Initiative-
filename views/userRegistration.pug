@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/styles/stylesheet.css")    
+    title= `${title}`    
+  body
+    #registerCont.container.d-flex.justify-content-center
+      .row.log-row
+        .col.log-col
+          h3 Register Here
+          form(action="/user/register/" name="regForm" method="POST" onsubmit="return validate()")
+            .mb-3
+              label.form-label(for="firstname") First Name
+              input#firstname.form-control(type="text" name="firstName")
+              #first_Name
+            .mb-3
+              label.form-label(for="lastname") Last Name
+              input#lastname.form-control(type="text" name="lastName")
+              #last_Name
+            .mb-3
+              label.form-label(for="username") Username
+              input#username.form-control(type="text" name="username")
+              #user_Name
+            .mb-3
+              label.form-label(for="userpassword") Password
+              input#userpassword.form-control(type="password" name="passCode")
+              #password
+            .mb-3
+              label.form-label(for="confirmuserpassword") Confirm Password
+              input#confirmuserpassword.form-control(type="password" name="confpassCode")
+              #password_confirm
+            button.btn.btn-primary.logbt(type="submit") Register
+          span#reg-link
+            a(href="/user/login/") Login
+
+    script(src="/javascript/userVal.js")

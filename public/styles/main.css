@@ -1,0 +1,201 @@
+*{
+  font-family: Roboto;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+.panel {
+border-radius: 5px;
+background-color: #fff;
+padding: 1rem 2rem;
+overflow-x: auto; 
+
+}
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem; 
+
+}
+  .panel-head .title {
+    font-size: 1.4rem;
+    text-transform: none;
+    font-weight: 300;
+    color: #475166;
+    margin: 0;
+    }
+
+.panel-body {
+  margin-bottom: 1rem;
+  }
+  
+.action {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-around;
+
+}
+
+/* Delete Icon */
+.remove{
+font-size: 1.5rem; 
+color: #ec5564; 
+}
+
+/* Delete Icon on Hover */
+.remove:hover {
+  color: #c51627;
+
+}
+
+/* Update Icon */
+.edit {
+color: #f5ba45;
+}
+.edit:hover {
+  color: #c9890b; 
+}
+
+/* Table Properties */
+table {
+width: 100%;
+border-collapse: collapse; 
+margin:20px 2px;
+
+}
+
+/* Border properties of table rows */
+tr:not(:last-child) {
+border-bottom: 1px solid #ebebee;
+
+}
+
+/* Table data and Table head properties */
+th,
+td {
+padding: 0.6rem;
+text-align: left;
+font-size: 18px; 
+border:1px solid rgba(220, 220, 220, 0.349);
+}
+
+/* Table head color */
+th {
+color: #000000;
+background-color: rgba(217, 235, 241, 0.815);
+text-align: center;
+}
+
+/* Table data color and font configurations */
+td {
+color: #475166;
+font-weight:100;
+
+}
+
+/* Field color alternation in the table */
+.zebra tr:nth-child(even) {
+background-color: #f5f6f8;
+
+}
+
+/* New customer/ truck/ Worker Button */
+.newCust{
+padding:5px 20px;
+background:whitesmoke;
+border:1px solid silver;
+color:black;
+border-radius: 6px;
+margin-bottom: 40px !important;
+
+}
+
+/* New customer / truck/ Worker Button on Hover */
+.newCust:hover{
+box-shadow: 2px 2px 6px silver;
+}
+
+/* Update Page  */
+
+
+/* Input fields */
+.updateInput, .formSelect{
+  height: 28px;
+  margin:5px;
+  color:gray;
+  background-color:rgba(192, 192, 192, 0.075);
+  border-radius: 3px;
+  border: 1px solid silver;
+}
+
+/* Remove bootstrap initial settings */
+.bTN:focus,
+.updateInput:focus{
+  box-shadow: none;
+  outline: 0;
+}
+
+/* Update Button properties */
+#bTN{
+  color:white;
+  background: rgb(0, 182, 152);
+  padding:5px 20px;
+  width: 300px;
+  border: 1px solid silver;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-top: 20px;
+  float: right;
+}
+
+/* Update button on hover*/
+#bTN:hover{
+  box-shadow: 2px 2px 5px silver;
+  background-color: rgb(1, 196, 196);
+}
+/* Row juxtaposing the image file */
+.rowUpdate{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: space-around;
+  margin-top:10px;
+}
+
+/* Form container */
+.updateContainer{
+  background-color: white;
+  color: black;
+  max-width: 800px;
+  border: 1px solid silver;
+  border-radius: 6px;
+  height: 600px;
+
+}
+
+/* Form Heading */
+.updateHeader{
+  text-align: start;
+  font-weight: 900;
+  padding:20px;
+  border-bottom:1px solid silver;
+ 
+}
+
+/* Image display */
+#updateImg{
+  width: 200px;
+  height:200px;
+}
+
+/* Form positioning */
+#formUpdate{
+  position:absolute;
+  left:40%;
+  top:10%;
+}

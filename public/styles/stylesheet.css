@@ -1,0 +1,680 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* login page */
+.loginCont{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 100;
+        margin:7% auto;
+    }
+    #registerCont{
+        margin:7% auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 100;
+        margin: 7% auto;
+    }
+    .log-col h3{
+        text-align:center;
+        border-bottom:1px solid silver;
+        margin-bottom:15px;
+        padding-bottom:15px;
+
+    }
+
+    label{
+        font-size: 17px;
+        color: rgb(85, 83, 94);
+    }
+
+    .log-row{
+        background-color:rgb(255, 255, 255);
+        max-width:500px;
+        padding:30px;
+        border:1px solid rgba(182, 172, 172, 0.473);
+        border-radius:18px;
+        box-shadow: 2px 6px 18px rgba(192, 192, 192, 0.712);
+    }
+
+    .logo{
+        margin-left:50px;
+        margin-top:-50px;
+        }
+
+    #username,#userpassword,#confirmuserpassword,#firstname,#lastname{
+        max-width:300px;
+        border:1px solid gray;
+    }
+    #username:hover,#userpassword:hover,#lastname:hover,#firstname:hover,#confirmuserpassword:hover{
+        box-shadow:2px 3px 7px silver;
+    }
+    #username:focus,#userpassword:focus,#lastname:focus,#firstname:focus,#confirmuserpassword:focus{
+        outline:0;
+        box-shadow: none;
+        border-color: green;
+    }
+    .logbt{
+        padding:5px 20px;
+        width:300px;
+        background-color:rgb(108, 0, 141);
+        border: none;
+        margin-bottom: 10px;
+    }
+    .logbt:hover{
+        background-color:rgba(12, 1, 15, 0.795);
+    }
+    .logbt:focus{
+        outline:0;
+        box-shadow: none !important;
+    }
+
+    .log-col span a{
+        text-decoration: none;
+        color:black;
+        margin-top:15px;
+    }
+    .log-col span a:hover{
+        color:blue;
+        text-decoration: underline;
+    }
+
+/* Error message properties*/
+    #logUsername,#userErr,#log_PassW,#tCode,#t_reg,#t_model,#t_make,#logPass,#wGend,#dOB,#role,#cusServ,#trucks_E,#pay_Err,#cusLoc,#custom_Name,#cNIN,#cTel,#fName,#lName,#valNIN,#drleRR,#small,#span,#first_Name,#last_Name,#user_Name,#password,#password_confirm{
+    color:red;
+    font-size: 13px;
+    border-radius: 2px;
+    padding:2px;
+}
+
+
+/* SideBar and NavBar */
+
+    /*Page Properties*/
+    .bodysb {
+        background-color: rgb(255, 255, 255);
+        max-width:100%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;            
+    }
+
+    /*Properties of the sidebar*/       
+    .sidebar{
+        height:100%;
+        width:0;
+        position:fixed;
+        z-index:2;
+        top:0;
+        left:0;
+        background-color:rgb(8, 160, 190);
+        overflow-x:hidden;
+        transition:0.5s;
+        padding-top:60px;
+    }
+    /*Close icon of the side bar*/
+    .sidebar .closebtn{
+        position:absolute;
+        top:0;
+        right:25px;
+        font-size:36px;
+        margin-left:50px;
+        color:rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    /*User profile*/
+
+    /*User Name*/
+    .profileFrame h5{
+        color: rgb(255, 255, 255);
+        margin-left: 80px;
+        padding-top:20px;
+    }
+    /*Avatar formatting*/
+    .profileFrame {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        margin-top: -30px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+
+    }
+
+    /*menu-list*/
+    /*Menu heading properties*/
+    .collapsed{
+       color:white;
+       padding-left:20px;
+    }
+    
+        /*Icons formatting*/
+    .fasb{
+        padding-right:30px;
+    }
+
+    /*Remove box shadow from sidebar drop down list*/
+    .accordion-button{
+        outline: 0 !important;
+        box-shadow: none !important;
+        border:none;
+    }
+    /*hover over the sidebar menu*/
+    .accordion-header:hover {
+        background-color: rgba(0, 248, 252, 0.612);
+        transition:0.01s;
+    }
+    /*Content lists*/
+    .card{
+        max-width: 100%;
+        margin:0;
+    }
+
+    /* Accordion on collapse */
+    .collapse{
+        background-color:rgb(6, 109, 168);
+        transition:0.5s;
+    }
+  /* Acordion body properties */
+    .accordion-body .list-group-item-action{
+        max-width: 100%;
+        height: 100%;
+        background-color: rgb(6, 109, 168);
+        transition: 0.5s;
+        border:none;
+        color:white;
+        text-align:center;
+
+    }
+    .list-group-item-action a{
+        text-decoration: none;
+        color:white;
+
+    }
+    .list-group-item-action:hover{
+        background-color:rgba(29, 172, 216, 0.767);
+        color:white;
+    }
+    
+    /*Main div*/
+    .main{
+        flex:1;
+        overflow: auto;
+    }
+    /*Nav bar*/
+    .navbar{
+        background-color:rgba(192, 192, 192, 0.256);
+        height:50px;            
+    }
+    /*Signout button*/
+    .navbar .btnnv{
+        padding:2px 10px;
+        border:1px solid silver;
+        border-radius:4px;
+    }
+    /*Signout button anchor*/
+    .navbar .btnnv a{
+        text-decoration: none;
+        color:rgba(0, 0, 0, 0.941);
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    /*signout button hover*/
+    .navbar .btnnv:hover{
+        background-color: whitesmoke;
+        box-shadow: 2px 2px 4px silver;
+
+    }
+
+    /*Nav bar Menu Button*/
+    .navbar span{
+        font-size:20px; 
+        cursor:pointer;
+        margin-left:10px;
+    }
+
+
+   /*Copyright Information*/
+    .footer{
+        position:fixed;
+        font-size: small;
+        font-weight: 100;
+        border-top: 1px solid rgba(192, 192, 192, 0.263);
+        width: 100%;
+        color:rgba(0, 0, 0, 0.941);
+        bottom:0;
+        text-align:center;
+        height:50px;
+        background-color: rgba(8, 8, 8, 0.568);
+    }
+   
+    /* Customer registration */
+    /*Customer Container*/
+
+    .container-cust{
+        color:rgb(7, 7, 7);
+        background-color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px; 
+           
+    }
+
+    .row_X{
+        padding:30px;
+        min-height: 500px;
+        border: 1px solid silver;
+        margin:1% auto;
+        border-radius: 6px; 
+    }
+
+    .headingCust{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 200;
+        border-bottom:1px solid gray;
+        font-size: large;
+        font-size: 30px;
+        text-transform: capitalize;
+        
+    }
+
+    .col-md-6_Cust{
+    padding:10px;
+    margin-top:10px;
+    }
+
+    .col-md-12_Cust{
+        margin-top: 5px;
+        margin-bottom: 6px;
+    }
+    
+    .row_X label{
+
+        font-weight: 100;
+    }
+    .form-control-Cust{
+        border:1px solid silver;
+        border-radius: 0;
+        height:35px;
+        border-radius: 4px !important;
+    }
+
+    #exampleFormControlSelect2{
+        height:100px;
+    }
+    /*Input elements in  the customer document*/
+    .form-control-Cust:focus{
+        outline:0;
+        border:1px solid rgb(18, 219, 18);
+        box-shadow:none;
+    }
+
+    #btnCustomer{          
+        border-radius:4px;
+        background-color:rgb(12, 173, 157);
+        border-color:rgb(12, 173, 157);
+        font-size: 19px;
+        color:white;
+        width:300px;
+        float:right;
+        margin-top: 30px;
+        padding-right:120px;     
+
+    }
+
+    #btnCustomer:hover{
+        color:white;
+        background-color: rgba(13, 139, 180, 0.863);
+        border-color:rgba(13, 139, 180, 0.863);
+    }
+    #btnCustomer:focus{
+        outline:0;
+        box-shadow:none;
+    }
+
+/* Driver and Conductor Registration     */
+    /*Container*/
+    .containerDC{
+        color:rgb(87, 76, 76);
+        background-color:whitesmoke;
+        font-family: 'Times New Roman';
+        font-size: 18px;     
+    }
+    /* Row */
+    .rowDC{
+        padding:30px;
+        min-height: 500px;
+        border: 1px solid silver;
+        border-radius: 6px;
+        margin:1% auto;  
+    }
+
+        /* Heading */
+    .headingDC{
+        text-align: center;
+        text-transform:capitalize;
+        font-weight: 200;
+        border-bottom:1px solid gray;
+        font-size: 30px;
+        font-family: 'Times New Roman';
+    }
+
+    .col-md-6DC{
+    padding:10px;
+    }
+    .col-md-12DC{
+        margin-top: 5px;
+        margin-bottom: 6px;
+    }
+    .col-md-4DC{
+        background-color: inherit;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* Fields */
+    .form-controlDC{
+        padding:5px;
+        height: 35px;
+        border:1px solid silver;
+        margin-top:5px;
+        border-radius:4px !important;
+
+    }
+    .form-controlDC:focus{
+        outline:0;
+        box-shadow:none;
+        border:1px solid rgb(18, 219, 18);
+    }
+    fieldset{
+        max-width: 300px;
+        margin-top: 10px;
+        text-align: start;
+    }
+    fieldset legend{
+        font-size: 18px;
+        color: black;
+        font-weight:300;
+    }
+    #female, #male,#accidents,#fights,#fuel,#driver,#conductor{
+        margin-top:15px;
+        margin-left: 6px;
+        margin-right: 10px;
+    }
+    .form-group{
+        margin-top:10px;
+    }
+
+    /* Button */
+    .btnDC{            
+        padding:2px 10px;
+        border-radius:1px;
+        background-color:rgb(12, 173, 157);
+        border-color:rgb(12, 173, 157);
+        font-size: 19px;
+        margin-top: 30px;
+        border-radius:4px;
+        float:right;
+        width:300px;
+    }
+    .btnDC:hover{
+        color:white;
+        background-color: rgba(13, 139, 180, 0.863);
+        border-color:rgba(13, 139, 180, 0.863);
+    }
+    .btnDC:focus{
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+
+/* Worker list */
+
+    .headerWL{
+        width:100%;
+        height:50px;
+        color:white;
+        background-color:rgba(21, 141, 101, 0.705);
+        text-align: center;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #newUser{
+        width:180px;
+        color:black;
+        background-color:cornsilk;
+        border:1px solid silver;
+        border-radius: 1px;
+        box-shadow: 1px 1px 2px darkgray;
+        margin-top:15px;
+    }
+    #newUser:hover{
+        background-color: rgba(250, 236, 182, 0.788);
+    }
+
+    /*Worker Lists*/
+
+    /*add worker Button*/
+    .faWL{
+        margin-right:5px;
+        color:black;
+        
+    }
+    /*Add worker Button*/
+    #addWorker{
+        text-decoration: none;
+        background-color:whitesmoke;
+        border:1px solid silver;
+        padding:2px 13px;
+        color:black;
+        height:30px !important;
+        border-radius:4px;
+        margin:auto;
+
+    }
+    /*Worker button on Hover*/
+    #addWorker:hover,
+    .faWL:hover{
+        background-color:navajowhite;
+        transition:1s;
+        color:mediumspringgreen;
+        
+    }
+/*Search Button properties*/
+
+/* Worker List Table
+
+    table{
+        margin:5% auto;
+        border-radius:4px;
+        width:90%;
+    }
+    thead{
+        background-color:rgba(99, 96, 96, 0.753);
+        color:white;
+        text-align:start;
+    }
+    th{
+        padding:5px 20px;
+
+    }
+    tbody{
+        background-color: rgba(243, 242, 239, 0.808);
+        text-align: start   ;
+    }
+    .fa-times,.fa-pencil{
+        padding:5px;
+        border:1px solid rgba(192, 192, 192, 0.555);
+        box-shadow:1px 1px 2px;
+        margin:-5px;
+    }
+    .fa-times:hover,
+    .fa-pencil:hover{
+        background-color: rgba(255, 255, 255, 0.863);
+    } */
+
+/* Order Css */
+
+    .row-2{
+        min-height:400px;
+    }
+    /* Heading */
+    #header{
+        text-align:center;
+        border-bottom:1px solid silver;
+    }
+    .row-1{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 100;
+        border-bottom: 1px solid silver;;
+    }
+
+    /* OrderForm */
+    #orderForm{
+        margin:7% auto;
+    }
+    .colX,.colY{
+        padding: 10px 20px;
+        margin-top:15px;
+    }
+
+    /* Input fields */
+    .form-control,.form-select{
+    border:1px solid silver;
+    border-radius: 0;
+    height:35px;
+    }
+
+    #multiple-select:focus,.form-select:focus, .form-control:focus{
+        outline: 0;
+        box-shadow: none;
+        border:1px solid yellowgreen;
+    }
+
+    #multiple-select{
+        height:200px;
+    }
+
+/* Button */
+    .btn_NO{
+        padding:2px 10px;
+        border-radius:1px;
+        background-color:rgb(12, 173, 157);
+        border-color:rgb(12, 173, 157);
+        font-size: 19px;
+        color:white;
+        margin:20px;
+        text-align:center;
+        width:500px;
+        text-align: center;
+    }
+    .btn_NO:focus{
+        outline: 0;
+        box-shadow: none;
+    }
+    .btn_NO:hover{
+        color:white;
+        background-color: rgba(13, 139, 180, 0.863);
+        border-color:rgba(13, 139, 180, 0.863);
+    }
+
+/* Truck css */
+
+    #truckRow{
+        margin:1% auto;
+        color:black;
+        background-color: white;
+        min-height: 500px;
+        padding: 30px;
+        border:1px solid silver;
+        border-radius: 6px;
+    }
+
+    #trucklabel{
+        font-size: 30px;
+        font-weight: 200;
+        border-bottom: 1px solid gray;
+        font-size:30px;
+        text-align:center;
+        height:50px;
+        
+    }
+
+
+    #col1,#col2,#col3{
+        margin-top:10px;
+    }
+    .form-truck{
+        border:1px solid silver;
+        height:35px;
+        border-radius:4px;
+    }
+    .form-truck:focus{
+        outline: 0;
+        box-shadow: none;
+        border:1px solid greenyellow;
+    }
+
+    #truckbtn{
+        padding:2px 10px;
+        border-radius:1px;
+        background-color:rgb(12, 173, 157);
+        border-color:rgb(12, 173, 157);
+        font-size: 19px;
+        float:right;
+        width:300px;
+        text-align: center;
+        border-radius: 2px;
+    }
+    #truckbtn:focus{
+        outline: 0;
+        box-shadow: none;
+    }
+    #truckbtn:hover{
+        color:white;
+        background-color: rgba(13, 139, 180, 0.863);
+        border-color:rgba(13, 139, 180, 0.863);
+    }
+
+    /* Home Page */
+
+    .Hrow{
+        margin:10% auto;
+    }
+    .Hcard{
+        background-color:rgba(63, 235, 241, 0.26);
+        max-width:500px;
+        height:300px;
+        margin:10% auto;
+        box-shadow:3px 2px 12px rgba(192, 192, 192, 0.452);
+        text-align:center;       
+        
+    }
+    .Hcard:hover{
+        box-shadow: 2px 3px 5px silver;
+    }
+    .card-title{
+        border-bottom:1px solid rgb(225, 225, 225);
+        margin-bottom: 35px;
+        background: linear-gradient(180deg,rgba(255, 255, 255, 0.829),rgba(255, 255, 255, 0.507));
+        padding:6px 20px;
+        border-radius: 6px;
+    }
+    .card-link{
+        padding:5px 20px;
+        background:whitesmoke;
+        border-radius: 6px;
+        border:1px solid rgb(191, 191, 191);
+        text-decoration: none;
+        color:rgb(59, 57, 57);
+        margin:15px;
+        display:block;
+    }
+    .card-link:hover{
+        color:blueviolet;
+        box-shadow: 1px 2px 5px silver;
+    }
+    .Hicons:hover{
+        color:rgb(6, 6, 94);
+    }

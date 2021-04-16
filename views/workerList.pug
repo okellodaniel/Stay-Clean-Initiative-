@@ -1,0 +1,35 @@
+extends layout
+block content
+  .panel
+    .panel-head
+      h6.title Customer List
+    span.newCust
+      a(href='/worker/') Register new Worker
+    .panel-body
+      table.zebra
+        tbody
+          tr
+            th Worker Names
+            th NIN
+            th Drivers License
+            th Position
+            th Gender
+            th Date of Birth
+            th Past Incidents
+            th Action
+          if workers.length
+          for worker in workers
+            tr  
+              td #{worker.secondName + '' + worker.firstName}
+              td #{worker.natId}
+              td #{worker.drivLic}
+              td #{worker.position}
+              td #{worker.gender}
+              td #{worker.dateOfBirth}
+              td #{worker.pastincident}
+              td
+                a.edit(href='/worker/update'+worker._id)
+                  ion-icon(name='create-outline')
+                a.remove(href='/worker/delete'+worker._id)
+                  ion-icon(name='trash-outline')
+

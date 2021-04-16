@@ -1,0 +1,24 @@
+extends layout
+block content
+  body
+    .container
+      .row.Hrow
+        .col-md-4.col-sm-6
+          .card.Hcard(style='width: 18rem; margin:15px;')
+            .card-body
+              h5.card-title New Order
+              a.Hicons(href='/order/')
+                ion-icon(name='add-outline' style='height:150px;width:150px; color:black; ')
+        .col-md-4.col-sm-6
+          .card.Hcard(style='width: 18rem; margin:15px;')
+            .card-body
+              h5.card-title New Customer
+              a.Hicons(href='/customer/')
+                ion-icon(style='height:150px; width:150px; color:black;' name='person-add-outline')
+        .col-md-4.col-sm-6
+          .card.Hcard(style='width: 18rem;margin:15px;')
+            .card-body
+              h5.card-title New Employee
+              a.Hicons(href='/worker/')
+                ion-icon(style='height:150px; color:black; width:150px;' name='person-circle-outline')
+    

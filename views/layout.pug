@@ -1,0 +1,91 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="/bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/styles/main.css")    
+    link(rel="stylesheet" href="/styles/stylesheet.css")
+    title= `${title}`
+  body
+    .container-fluid
+      .body-sb
+        #mysidebar.col-sm-12.col-md-12.sidebar
+          a.closebtn(href='javasscript:void(0)' onclick='closeNav()') ⨉
+          #userAvatar
+            .profileFrame
+              h5 User
+          #accordionExample.accordion.accordion-flush
+            .accordion-item
+              h2#headingOne.accordion-header
+                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                  span.fa.fa-home.mr-3.fasb
+                  |  Home
+              #collapseOne.accordion-collapse.collapse(aria-labelledby='headingOne' data-bs-parent='#accordionExample')
+                .accordion-body
+                  .homeList
+                    button.list-group-item.list-group-item-action(type='button') 
+                      a(href="/home/") Home
+            .accordion-item.accordion-flush
+              h2#headingTwo.accordion-header
+                button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+                  span.fa.fa-calculator.fasb
+                  |  Registration
+              #collapseTwo.accordion-collapse.collapse(aria-labelledby='headingTwo' data-bs-parent='#accordionExample')
+                .accordion-body
+                  // registration information
+                  .regList
+                    button.list-group-item.list-group-item-action(type='button')
+                      a(href='/worker/')  Workers
+                    button.list-group-item.list-group-item-action(type='button')
+                      a(href='/truck/') Trucks
+                    button.list-group-item.list-group-item-action(type='button')
+                      a(href='/customer/') Customers   
+              .accordion-item.accordion-flush
+                h2#headingThree.accordion-header.head
+                  button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                    span.fa.fa-money.fasb(aria-hidden='true')
+                    |  Lists
+                #collapseThree.accordion-collapse.collapse(aria-labelledby='headingThree' data-bs-parent='#accordionExample')
+                  .accordion-body
+                    button.list-group-item.list-group-item-action(type='button')
+                      a(href='/worker/list') Workers
+                    button.list-group-item.list-group-item-action(type='button')
+                      a(href='/customer/list') Customers
+                    button.list-group-item.list-group-item-action(type='button')
+                      a(href='/truck/list') Trucks
+              .accordion-item.accordion-flush
+                h2#headingFour.accordion-header
+                  button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='false' aria-controls='collapseFour')
+                    span.fa.fa-line-chart.fasb
+                    | Report Center
+                #collapseFour.accordion-collapse.collapse(aria-labelledby='headingFour' data-bs-parent='#accordionExample')
+                  .accordion-body
+                    .regList
+                      button.list-group-item.list-group-item-action(type='button') Trips
+                      button.list-group-item.list-group-item-action(type='button') Customer calls
+                      button.list-group-item.list-group-item-action(type='button') Payments
+      .col-sm-12.col-md-12.main
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+          .container-fluid
+            span(onclick='openNav()') Ⅲ MENU
+            .d-md-flex.justify-content-md-end
+              button.btnnv(type='button')
+                a(href='/logout/') Sign Out
+        main.content
+        block content
+      
+    .footer
+        p  Copyright © 2021 All rights reserved
+        p A project by Daniel Okello
+    script(src='/javascript/include.js')
+    script(src='/bootstrap/js/bootstrap.js')
+    script(src='/javascript/sideBarOpenClose.js')
+    script(src="/javascript/include.js")
+    script( type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js")
+
+    

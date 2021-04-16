@@ -1,0 +1,31 @@
+extends layout
+block content
+  .panel
+    .panel-head
+      h6.title Customer List
+    span.newCust
+      a(href='/truck/') Register A new Truck
+    .panel-body
+      table.zebra
+        tbody
+          tr
+            th Manufacturer
+            th Vehicle Model
+            th Registration Number
+            th Truck Code
+            th Action
+          if trucks.length
+          each truck in trucks
+            tr
+              td #{truck.truckMake}
+              td #{truck.truckModel}
+              td #{truck.truckRegNo}
+              td #{truck.truckCode}
+              td.action
+                a.edit(href='/truck/update' + truck._id)
+                  ion-icon(name='create-outline')
+                a.remove(href='/truck/delete'+truck._id)
+                  ion-icon(name='trash-outline')
+
+
+

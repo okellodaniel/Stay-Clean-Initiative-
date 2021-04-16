@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>title</title>
+    <style>
+
+       
+    </style>
+</head>
+<body>
+    <div class="container updateContainer">
+        <div class="row">
+            <div class="col updateHeader">
+                <h5>Update Worker information</h5>
+            </div>
+        </div>
+        <div class="row rowUpdate">
+            <!-- <div class="col colT">
+                <img id="updateImg" src="/"+user.imageupload¬ " alt="">
+            </div> -->
+            <div class="col colW">
+                <form action="/worker/update?id="+worker.id method="POST" id="formUpdate" >
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    First Name
+                                </th>
+                                <td>
+                                    <input class="form-control updateInput" name="first_name" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Last Name
+                                </th>
+                                <td>
+                                    <input class="form-control updateInput" name="lastname" value="" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    NIN
+                                </th>
+                                <td>
+                                    <input class="form-control updateInput" name="first_name" value="" >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Gender
+                                </th>
+                                <td class="buttonUpdate">
+                                    <label for="maleUpdate">Male&nbsp</label>
+                                    <input type="radio" value="male" checked = user.gender==="male" name="gender"  id="maleUpdate">
+                                    <label for="femaleUpdate">&nbspFemale&nbsp</label>
+                                    <input type="radio" value="female" checked = user.gender==="female" name="gender" id="femaleUpdate">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Past Incidents
+                                </th>
+                                <td>
+                                    <label for="">Accidents&nbsp</label>
+                                    <input value="accidents" type="checkbox" checked=user.pastincidence.includes(' accidents ') name="pastincidence" >
+                                    <label for="">&nbspFights&nbsp</label>
+                                    <input value="fights" type="checkbox" checked=user.pastincidence.includes(' fights ') name="pastincidence" >
+                                    <label for="">&nbspFuel Thefts&nbsp</label>
+                                    <input value="fuel thefts" type="checkbox" checked=user.pastincidence.includes(' fuel thefts') name="pastincidence" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Role
+                                </th>
+                                <td>
+                                    <select class = "formSelect" name="role">
+                                        <option value="driver" selected= user.role === "driver" class="updateInput"> Driver</option>
+                                        <option value="conductor" selected= user.role === "conductor" class="updateInput"> Conductor</option>
+                                </td>
+                            </tr>
+
+                        </thead>
+                    </table>
+                    <button type="submit" id="bTN">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
