@@ -1,43 +1,34 @@
 //dependencies
 const express = require('express');
 const router = express.Router();
-// const passport = require('passport');
-
+const passport = require('passport');
 //Import User model
 const User = require('../models/User');
 
-//login route
-router.get('/login',(req,res)=>{
-    res.render('login',{title:'Login Page'});
-});
-
-//Process login information on submission
-// router.post('/login',passport.authenticate('local',{failureRedirect:'/user/login'}),(req,res)=>{
-//     req.session.user = req.user;
-//     res.redirect('/home/');
-// })
-
 
 //new user signup page display
-router.get('/register',(req,res)=>{
+router.get('/',(req,res)=>{
     res.render('userRegistration',{title:'New User Registration'})
 });
 
 //New user signup
-router.post('/register', async(req,res) => {
+router.post('/', async(req,res) => {
 
     try{
         const newUser = new User(req.body);
-        await User.register(newUser,req.body.password,(err)=>{
+         await User.register(newUser, req.body.passCode, (err)=>{
             if(err){
-                throw err
+                console.log(err);
             }
-            console.log(req.body);
-            res.status(201).redirect('/user/login/')
-        })
-    }
+            else{
+                console.log(req.body);
+                res.redirect('/login');
+            }
 
-    catch (err) {
+        });
+    }
+        
+    catch(err){
         res.status(500).send('Error!!');
         console.log(err);
     }

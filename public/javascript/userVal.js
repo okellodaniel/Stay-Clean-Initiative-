@@ -122,7 +122,7 @@ function fname_verify(){
     }
     else{
         fname.style.border = '2px solid red';
-        firstNameError('Name should be letters only,atleast 2 \n characters and atmost 50 characters')
+        firstNameError('Name should be letters only,atleast 2 characters and \n atmost 50 characters')
     }
 }
 
@@ -135,7 +135,7 @@ function lname_verify(){
     }
     else{
         lname.style.border = '2px solid red';
-        lastNameError('Name should be letters only,atleast 2 \n characters and atmost 50 characters')
+        lastNameError('Name should be letters only,atleast 2 characters and \n atmost 50 characters')
     }
 }
 
@@ -149,7 +149,7 @@ function userId_verify(){
     }
     else{
         user.style.border = '2px solid red';
-        usernameError('Username should be atleast 5 \n characters starting with STC');
+        usernameError('Username should be atleast 5 characters starting \n with STC');
         user.focus();
         return false;
     }
@@ -167,7 +167,7 @@ function userPass_verify(){
 
     else{
         pass.style.border = '2px solid red';
-        passwordError('Password should contain atlease a number, \n letter and special character');
+        passwordError('Password should contain atlease a number,letter and \n special character');
         pass.focus();
         return false;
     }
@@ -178,7 +178,7 @@ function userPass_verify(){
 function userPassconf_verify (){
     if(passConf.value != '' && passConf.value == pass.value){
         passConf.style.border = '1px solid green';
-        confirmPasswordError('password Match');
+        confirmPasswordError('');
         return true;
     }
     else{
