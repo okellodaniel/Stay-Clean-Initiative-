@@ -199,3 +199,46 @@ box-shadow: 2px 2px 6px silver;
   left:40%;
   top:10%;
 }
+
+/* Search Button settings */
+
+#searchBtn{
+  position: relative;
+  left:80%;
+}
+
+#SBtn{
+  width: 40px;
+  height: 40px;
+  background-color: darkcyan;
+  border-radius: 50% !important;
+  position: absolute;
+  left: 15%;
+  z-index: 1;
+}
+
+#SBtn:hover{
+  background-color: white;
+  color: black;    
+
+}
+
+#SBtn:focus{
+   outline: 0;
+   box-shadow: none;
+}
+
+/* Search input */
+#form1{
+  border-radius: 15px;
+  height: 40px;
+}
+
+#form1:focus{
+   outline: 0;
+   box-shadow: none;
+}
+#form1:hover{
+  box-shadow: 1px 1px 1px 4px whitesmoke;
+  
+}

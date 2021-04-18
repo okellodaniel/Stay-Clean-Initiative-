@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/landingPage.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/landingPage.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="container d-flex justify-content-center" id="landerCont">
-        <div class="rowX">
-            <div class="cardL">
-                <div class="colX">
-                    <img src="../images/00541cae-2e5c-4e01-a735-f2837cc72dde_200x200 (1).png">
-                </div>
-                <div class="colX" id="landerBtn">
-                    <a href="/login/">Login</a>
-                    <a href="/register/newUserRegistration">Register</a>
-                </div>
-            </div>
-        </div> 
+     <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <h3>Stay Clean Initiative</h3>
+            <ul>
+                <li><a href="/login/">Login</a></li>
+                <li><a href="/signup/">Signup</a></li>
+            </ul>
+        </div>
+    </nav>    
+    <div class="container" id="landerCont">
+        <div class="background-image"></div>
+        <div class="content">
+            <img src="../images/00541cae-2e5c-4e01-a735-f2837cc72dde_200x200.png" alt="logo">
+            <h5 style="color: chartreuse; font-size: 30px;">The Stay Clean Initiative</h5>
+            <p>Stay Clean Initiative is an NGO aimed at changing the dinamics of waste solutions in areas within the capital of Kampala. This web application bridges the gap of recording the calls from customers and managing the trucks </p>
+            <p style="color: rgb(211, 26, 118);">Register as an Admin to use this platform</p>
+        </div>            
     </div>
 </body>
 </html>

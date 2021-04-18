@@ -7,23 +7,16 @@ const mongoose = require('mongoose');
 const customerSchema = new mongoose.Schema({
     customerName:{
         type:String,
-        // required:true,
-        // min:2,
-        // max:50
       },
     
     location:String,
     national_Id:{
         type:String,
-        // required:true,
-        // unique:true,
-        // min:14,
-        // trim:true
+        unique:true
     },
     phone_number:{
         type:String,
-        // required:true,
-        // min:13
+        unique:true
     },
     serviceType:String,
     truckNumber:String,

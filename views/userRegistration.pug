@@ -13,7 +13,7 @@ html(lang="en")
       .row.log-row
         .col.log-col
           h3 Register Here
-          form(action="/signup/" name="regForm" method="POST" onsubmit="return validate()")
+          form(action="/signup" name="regForm" method="POST" onsubmit="return validate()")
             .mb-3
               label.form-label(for="firstname") First Name
               input#firstname.form-control(type="text" name="firstName")
@@ -36,6 +36,6 @@ html(lang="en")
               #password_confirm
             button.btn.btn-primary.logbt(type="submit") Register
           span#reg-link
-            a(href="/login/") Login
+            a(href="/login") Login
 
     script(src="/javascript/userVal.js")

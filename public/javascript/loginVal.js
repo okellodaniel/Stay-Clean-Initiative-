@@ -68,7 +68,7 @@ function userId_verify(){
     }
     else{
         loginUserId.style.border = '2px solid red';
-        usernameError('Username should be atleast 5 characters \n starting with STC');
+        usernameError('Username should be atleast 5 characters starting with \n STC');
         loginUserId.focus();
         return false;
     }
@@ -86,7 +86,7 @@ function userPass_verify(){
 
     else{
         loginPasscode.style.border = '2px solid red';
-        passwordError('Password should contain atlease a number,\n letter and special character');
+        passwordError('Password should contain atlease a number, letter and \n special character');
         loginPasscode.focus();
         return false;
     }

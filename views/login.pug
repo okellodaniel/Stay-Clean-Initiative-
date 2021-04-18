@@ -12,7 +12,7 @@ html(lang='en')
     .container.loginCont.d-flex.justify-content-center
       .row.log-row
         .col.log-col
-          form#logform(action="/login/" name="signInForm" method="POST" onsubmit="return validate()")
+          form#logform(action="/login" name="signInForm" method="POST" onsubmit="return validate()")
             .logo#loginLogo
               img(src="/images/00541cae-2e5c-4e01-a735-f2837cc72dde_200x200 (1).png" alt="logo")
             .mb-3
@@ -25,7 +25,7 @@ html(lang='en')
               span#log_PassW
             button.btn.btn-primary.logbt(type="submit") Login
           span#reg-link
-            a(href="/signup/") Not registered?, click here
+            a(href="/signup") Not registered?, click here
   
   script(src='/javascript/loginVal.js')
     

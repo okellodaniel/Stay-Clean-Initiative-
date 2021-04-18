@@ -2,9 +2,14 @@ extends layout
 block content
   .panel
     .panel-head
-      h6.title Customer List
+      h6.title Worker List
     span.newCust
       a(href='/worker/') Register new Worker
+    #searchBtn.input-group
+      .form-outline
+        input#form1.form-control(type='search')
+      button#SBtn.btn.btn-primary(type='button')
+        i.fa.fa-search
     .panel-body
       table.zebra
         tbody
