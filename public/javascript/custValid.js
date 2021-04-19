@@ -127,7 +127,7 @@ function validate(){
 
 
 // Regular expressions 
-const nameregExp = /^.{2,50}[a-zA-Z].*[\s\.]*$/;
+const nameregExp = /^.{2,50}[A-Za-z].*[\s\.]*$/;
 const ninExp = /([C-M0-9A-Z0-9A-Z]{14})/;// regular Expression for National Id
 const phoneExp = /^[\+\0-9a-zA-Z]+$/; // Regular expression for the phone number field
 

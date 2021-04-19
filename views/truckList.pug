@@ -7,7 +7,7 @@ block content
       a(href='/truck/') Register A new Truck
     #searchBtn.input-group
       .form-outline
-        input#form1.form-control(type='search')
+        input#form1.form-control(type='search' name='truckCode' placeholder='Enter Truck Code')
       button#SBtn.btn.btn-primary(type='button')
         i.fa.fa-search  
     .panel-body
@@ -18,6 +18,7 @@ block content
             th Vehicle Model
             th Registration Number
             th Truck Code
+            th Driver 
             th Action
           if trucks.length
           each truck in trucks
@@ -26,10 +27,10 @@ block content
               td #{truck.truckModel}
               td #{truck.truckRegNo}
               td #{truck.truckCode}
-              td.action
-                a.edit(href='/truck/update' + truck._id)
+              td
+                a.edit(href='/truck/update/' + truck._id)
                   ion-icon(name='create-outline')
-                a.remove(href='/truck/delete'+truck._id)
+                a.remove(href='/truck/delete/'+truck._id)
                   ion-icon(name='trash-outline')
 
 

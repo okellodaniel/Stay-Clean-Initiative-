@@ -52,7 +52,7 @@ function validate(){
 
 // Regular Expressions
 
-const nameExp = /([STC0-9]{5})\w+/; // Regular expression for username. Starts with STC followed by numbers
+const nameExp =  /([STC0-9]{5})/; // Regular expression for username. Starts with STC followed by numbers
 const passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{5,}$/;//  regular expression for password field,ensures a minimum of 5 characters, at least one letter, one number and one special character. 
 
 
@@ -68,7 +68,7 @@ function userId_verify(){
     }
     else{
         loginUserId.style.border = '2px solid red';
-        usernameError('Username should be atleast 5 characters starting with \n STC');
+        usernameError('Username should be atleast 5 characters starting \n with STC');
         loginUserId.focus();
         return false;
     }
@@ -86,7 +86,7 @@ function userPass_verify(){
 
     else{
         loginPasscode.style.border = '2px solid red';
-        passwordError('Password should contain atlease a number, letter and \n special character');
+        passwordError('Password should contain atleast a number, letter \n and special character');
         loginPasscode.focus();
         return false;
     }

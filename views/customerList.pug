@@ -7,7 +7,7 @@ block content
       a(href='/customer/') Register new Customer
     #searchBtn.input-group
       .form-outline
-        input#form1.form-control(type='search')
+        input#form1.form-control(type='search' placeholder='search by name' name='CustomerName')
       button#SBtn.btn.btn-primary(type='button')
         i.fa.fa-search 
     .panel-body
@@ -28,14 +28,13 @@ block content
               td  #{customer.customerName}  
               td  #{customer.location}
               td  #{customer.truckNumber}
-              td  #{customer.phoneNumber}
+              td  #{customer.phone_Number}
               td  #{customer.serviceType} 
-              td  #{customer.nationalId}
+              td  #{customer.national_Id}
               td  #{customer.paymentType}
               td
-                form(action="/customer")  
-                    a.edit(href='/customer/update'+customer._id)
-                      ion-icon(name='create-outline')
-                    a.remove(href='/customer/delete'+customer._id)
-                      ion-icon(name='trash-outline')
+                a.edit(href='/customer/update/'+customer._id)
+                  ion-icon(name='create-outline')
+                a.remove(href='/customer/delete/'+customer._id)
+                  ion-icon(name='trash-outline')
                   

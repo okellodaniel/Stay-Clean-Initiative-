@@ -18,8 +18,9 @@ router.post('/',async (req,res) => {
     try{             
       const customerReg = new Customer(req.body);
       await customerReg.save();
-      res.redirect('/customer/list');  
+      res.redirect('/customer/');  
   }
+  
   catch(err){
     console.log(err);
     res.status(400).send('Error!!');
@@ -70,7 +71,7 @@ router.post ( '/update', async (req,res) => {
 router.post ('/delete', async(req,res) => {
   try{
     await Customer.deleteOne({_id: req.body.id});
-    res.redirect('/customer/list');
+    res.redirect('back');
   }
   catch (err) {
     res.status(400).send('Error deleting Customer from the DataBase');

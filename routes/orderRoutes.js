@@ -2,13 +2,19 @@
 const express = require('express');
 const router = express.Router();
 const Order = require('../models/Order');
+const Truck = require('../models/Truck'); 
+const Worker = require('../models/Worker');
 // const passport = require('passport');
 
 
 // Respond to request when user hits end point '/'
 
-router.get('/', (req,res) => {
-    res.render('newOrder',{title:'New Order'})
+router.get('/', async(req,res) => 
+{   
+    const drivers = await Worker.find();
+    const trucks = await Truck.find();
+    console.log(trucks);
+    res.render('newOrder',{driver:drivers, truck:trucks, title:'New Order'});
 });
 
 // Save a new order request to the database
@@ -32,8 +38,8 @@ router.post('/', async(req,res) => {
 router.get('/list', async (req,res) =>{
 
     try{
-        let orderDetails = await Order.find();
-        res.render('orderList', {users: orderDetails, title:'Orders Data'});
+        const orderDetails = await Order.find();
+        res.render('orderRecords', {order: orderDetails, title:'Orders Data'});
 
     }
 
@@ -45,10 +51,10 @@ router.get('/list', async (req,res) =>{
 
 // Request and Update Order details
 
-router.get('/update:id', async(req,res) => {
+router.get('/update/:id', async(req,res) => {
     try{
-        let updateOrder = await Order.findOne({ _id: req.params.id});
-        res.status(201).render('updateOrder',{user: updateOrder});
+        const updateOrder = await Order.findOne({ _id: req.params.id});
+        res.render('updateOrder',{order: updateOrder});
     }
 
     catch (err){
@@ -58,31 +64,33 @@ router.get('/update:id', async(req,res) => {
 });
 
 
-
 // Save updated order
 
 router.post('/update', async (req,res) => {
     try{
         await Order.findOneAndUpdate({ _id: req.query.id}, req.body);
-        res.redirect('/newOrder/list');
+        res.redirect('/order/list');
     }
     catch (err){
-        res.status(400).send('Error, Something went wrong, Cannot update the order ');
+        res.status(500).send('Error, Something went wrong, Cannot update the order ');
     };
 });
 
 // Delete An Order from the database
 
-router.post('/delete', async (req,res) => {
+router.get('/delete/:id', async (req,res) => {
+   
     try{
-        await Order.deleteOne({ _id: req.body.id});
+        await Order.findByIdAndDelete({ _id: req.params.id});
         res.redirect('back');
     }
 
     catch (err){
-        res.status(400).send('Error deleting Order');
+        res.status(500).send('Error deleting Order');
     };
+
 });
+
 
 //Export module
 module.exports = router;

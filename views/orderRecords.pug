@@ -1,0 +1,32 @@
+extends layout 
+block content
+    .panel
+        .panel-head
+            h6.title Order Record
+        span.newCust
+            a(href='/order/') Return to Orders
+        .panel-body
+            table.zebra
+                tbody
+                    tr
+                        th Driver Name
+                        th Conductors
+                        th Truck Location
+                        th Next Destination
+                        th Date
+                        th Truck Code Number
+                        th Action
+                    if order.length
+                    each trip in order
+                        tr
+                            td #{trip.driverName}
+                            td #{trip.condNumber}
+                            td #{trip.truckLocation}
+                            td #{trip.date}
+                            td #{trip.nxtDest}
+                            td #{trip.truckCod}
+                            td
+                                a.edit(href='/order/update/' + order._id)
+                                    ion-icon(name='create-outline')
+                                a.remove(href='/order/delete/'+order._id)
+                                    ion-icon(name='trash-outline')

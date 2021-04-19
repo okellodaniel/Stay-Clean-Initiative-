@@ -7,7 +7,7 @@ block content
       a(href='/worker/') Register new Worker
     #searchBtn.input-group
       .form-outline
-        input#form1.form-control(type='search')
+        input#form1.form-control(type='search' name='position' placeholder='Search by Role')
       button#SBtn.btn.btn-primary(type='button')
         i.fa.fa-search
     .panel-body
@@ -33,8 +33,8 @@ block content
               td #{worker.dateOfBirth}
               td #{worker.pastincident}
               td
-                a.edit(href='/worker/update'+worker._id)
-                  ion-icon(name='create-outline')
-                a.remove(href='/worker/delete'+worker._id)
+                a.edit(href='/worker/update/'+worker._id)
+                  ion-icon(name='create-outline') 
+                a.remove(href='/worker/delete/'+worker._id)
                   ion-icon(name='trash-outline')
 

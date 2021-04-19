@@ -73,6 +73,11 @@ function validate(){
     }
 }
 
+
+// Regex Equations
+
+const truckCodeRegex = /([A-Z]{3}[0-9]{3})/;
+
 // Event Handlers
 
 // Truck make Event Handler
@@ -123,7 +128,7 @@ function truckReg_verify(){
 
 // Truck Code verification Handler
 function truckCode_verify(){
-    if(truckCode.value != ''){
+    if(truckCode.value != '' && truckCode.value.match(truckCodeRegex)){
         truckCode.style.border = '1px solid green';
         truckCodeError('');
         return true;

@@ -25,7 +25,7 @@ block content
           label(for='exampleFormControlSelect1') Type of Service
           select#exampleFormControlSelect1.form-control.form-control-Cust(name='serviceType')
             option(value='Garbage') Garbage Collection
-            option(value='Seawage') Sewage Collection
+            option(value='Sewage') Sewage Collection
             span#cusServ
         .col-md-4.form-group
           label(for='exampleFormControlSelect1') Trucks Needed
@@ -38,10 +38,11 @@ block content
             span#trucks_E
         .col-md-4.form-group
           label(for='exampleFormControlSelect1') Service Type
-          select#exampleFormControlSelect1.form-control.form-control-Cust(name='paymentType')
+          select#exampleFormControlSelect1.form-control.form-control-Cust.subsciption(name='paymentType')
             option(value='subsciption') Subscription
             option(value='onetime') One-time
             span#pay_Err
         .col-md-12.col-md-12_Cust
           button#btnCustomer.btn.btn-secondary.d-flex.justify-content-end(type='submit') Register
     script(src="/javascript/custValid.js")
+    script(src="/javascript/subscription")

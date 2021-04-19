@@ -22,11 +22,12 @@ var userName = ()=>{
 
     //variable accessing input element by name
     var userName = document.login.username;
+    
     //variable stating minimum number of characters in the username field.
     var min = 5;
     
     //Regular expression for username. Starts with STC followed by numbers
-    const nameExp = /([STC0-9]{5})\w+/;
+    const nameExp = /([STC0-9]{5})/;
 
     //Condition for empty username field
     if(userName.value ===''){

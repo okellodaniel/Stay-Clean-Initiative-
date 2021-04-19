@@ -1,37 +1,47 @@
 extends layout 
 block content
-    .container
-      form#orderForm(action="/order/newOrder" method="POST")
-        .row.row-2.rov
-          .col-12.col-md-12#header
-            h2 New Trip
-          .col-12.col-md-8.colY
-            select.form-select(aria-label='Default select example')
-              option(selected='')
-            each worker in workers
-                option(name="workerName" value=worker.name selected= (worker.id == worker.id)) #{worker.name == worker.name}
-          .col-12.col-md-4.colY
-            select.form-select(aria-label='Default select example')
-              option(selected='') Number of Conductors
-              option(value='1') 1
-              option(value='2') 2
-              option(value='3') 3
-              option(value='3') 4
-              option(value='3') 5
-          .col-12.col-md-4.colY
-            label(for='location') Current Location
-            input#location.form-control(type='text' name='truckLocation')
-          .col.col-md-3.colX
-            label(for='date') Date
-            input#date.form-control(type='date' name='date')
-          .col.col-md-5.colX
-            label(for='nextDest') Next Destination
-            input#nextDest.form-control(type='text' name='nxtDest')
-          .col.col-md-6.colX
-            label.
-              Truck code Number
-            select.form-select(aria-label='Default select example')
-            each truck in trucks
-                option( name="truckCodeNo" value='truck.truckCode' selected=(truck.id == truck.id)) #{truck.truckCode}
-          .col-12.col-md-12.colY
-            button.btn.btn_NO(type='submit') New Trip
+  .container
+    form#orderForm(action="/order/" method="POST" name ="orderForm" onsubmit="return validate()")
+      .row.row-2.rov
+        .col-12.col-md-12#header
+          h2 New Trip
+        .col-12.col-md-8.colY
+          select.form-select(aria-label="Default select example" name ="driverName")
+            option(selected="Choose a Driver") Choose a Driver
+            if driver.length
+            each worker in driver 
+                option() #{worker.firstName} #{worker.secondName} #{worker.position}  
+          span#driv(style="color:red; font-size:15px;")             
+        .col-12.col-md-4.colY
+          select.form-select(aria-label="Default select example" name="condNumber")
+            option(selected="" ) Number of Conductors
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="3") 4
+            option(value="3") 5
+          span#cond(style="color:red; font-size:15px;")
+        .col-12.col-md-4.colY
+          label(for="location") Current Location
+          input#location.form-control(type="text" name="truckLocation")
+          span#truck(style="color:red; font-size:15px;")
+        .col.col-md-3.colX
+          label(for="date") Date
+          input#date.form-control(type="date" name="date")
+          span#dAt(style="color:red; font-size:15px;")        
+        .col.col-md-5.colX
+          label(for="nextDest") Next Destination
+          input#nextDest.form-control(type="text" name="nxtDest")
+          span#dest(style="color:red; font-size:15px;")
+        .col.col-md-6.colX
+          label(for="trucks") Truck code Number
+          select#trucks.form-select(aria-label="Default select example" name="truckCod")
+            option(selected = "Select Truck Code Number") Select Truck Code Number
+            if truck.length
+            each car in truck               
+              option(value="CodeNumber:${car.code}") #{car.truckCode}   
+          span#tcode(style="color:red; font-size:15px;")    
+        .col-12.col-md-12.colY
+          button.btn.btn_NO(type="submit") New Trip
+
+  script(src="/javascript/orderVal.js") 

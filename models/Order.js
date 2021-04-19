@@ -1,19 +1,19 @@
-//Dependencies
 const mongoose = require('mongoose');
-// const passportLocalMongoose = require('passport-local-mongoose');
 
-//Database schema for the Orders
 const orderSchema = new mongoose.Schema({
+
+    driverName:String,
+    condNumber:String,
     truckLocation:String,
-    date:String,
+    date:{
+        type:String,
+        default:Date.now()
+    },
     nxtDest:String,
-    truckCodeNo:String,
-    workerName:String
+    truckCod:String
+
 });
 
-//setting up plugin for Orders
-// orderSchema.plugin(passportLocalMongoose);
 
-//Associating the Order schema with the actual collection name
-
+// Export Order Schema
 module.exports = mongoose.model('Order',orderSchema);

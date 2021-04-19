@@ -2,16 +2,33 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const session = require('express-session');
+
+
+// const expressSession = require('express-session')({
+//     secret:'secret',
+//     resave:false,
+//     saveUninitialized:true
+// }); 
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+// Import user model
+const User = require('./models/User');
+
+//Instanciating
+
 
 // Express-Session middleware, save session cookie
-const expressSession = require('express-session')({
+app.use(session({
     secret:'secret',
     resave:false,
     saveUninitialized:false
-}); 
+}));
 
-//Instanciating
-const app = express();
 
 // import routes
 const orderRoute = require('./routes/orderRoutes');
@@ -22,13 +39,9 @@ const signupRoute= require('./routes/userRoutes');
 const homeRoute = require('./routes/homeRoute');
 const loginRoute = require('./routes/loginRoute');
 
-// Import user model
-const User = require('./models/User');
 
 // Configure environment variable
 require('dotenv').config();
-
-
 
 //Database configuration
 mongoose.connect(process.env.DATABASE,{
@@ -52,10 +65,10 @@ app.set('views','./views');
 
 
 //middleware
-app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
 app.use('/Public/images',express.static(__dirname + '/Public/images'));
-app.use(expressSession);
+// app.use(expressSession);
 
 // Initializing  passport module and connecting it to our session
 app.use(passport.initialize());
@@ -108,6 +121,6 @@ app.get('*',(req,res)=>{
 });
 
 //Server configuration
-port = process.env.PORT || 8945;
+port = process.env.PORT || 3000;
 
 app.listen(port, ()=> console.log(`listening on port ${port}`));

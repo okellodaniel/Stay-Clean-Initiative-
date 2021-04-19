@@ -78,7 +78,7 @@
     }
 
 /* Error message properties*/
-    #logUsername,#userErr,#log_PassW,#tCode,#t_reg,#t_model,#t_make,#logPass,#wGend,#dOB,#role,#cusServ,#trucks_E,#pay_Err,#cusLoc,#custom_Name,#cNIN,#cTel,#fName,#lName,#valNIN,#drleRR,#small,#span,#first_Name,#last_Name,#user_Name,#password,#password_confirm{
+    #driv,#cond,#truck,#date,#dest,#tcode,#logUsername,#userErr,#log_PassW,#tCode,#t_reg,#t_model,#t_make,#logPass,#wGend,#dOB,#role,#cusServ,#trucks_E,#pay_Err,#cusLoc,#custom_Name,#cNIN,#cTel,#fName,#lName,#valNIN,#drleRR,#small,#span,#first_Name,#last_Name,#user_Name,#password,#password_confirm{
     color:red;
     font-size: 15px;
     border-radius: 2px;
@@ -135,7 +135,7 @@
         background-color: rgb(255, 255, 255);
         margin-top: -30px;
         margin-left: 30px;
-        margin-bottom: 10px;
+        margin-bottom: 50px;
 
     }
 
@@ -144,6 +144,7 @@
     .collapsed{
        color:white;
        padding-left:20px;
+       margin-top: 10px;;
     }
     
         /*Icons formatting*/
@@ -197,13 +198,17 @@
     /*Main div*/
     .main{
         flex:1;
-        overflow: auto;
+        /* overflow: auto; */
     }
     /*Nav bar*/
     .navbar{
-        background-color:rgba(192, 192, 192, 0.256);
-        height:50px;  
-        width: 100%;          
+        background-color:rgba(255, 255, 255, 0.664) !important;
+        height:40px;  
+        width: 100%; 
+        position: static; 
+        left: 0; 
+        border-bottom: 1px solid silver;   
+        box-shadow: 0 2px 4px silver;   
     }
     /*Signout button*/
     .navbar .btnnv{

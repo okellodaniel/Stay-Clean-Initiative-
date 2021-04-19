@@ -230,3 +230,28 @@ function dOb_verify(){
 
 }
 
+
+// Gender Event Handler
+// function genderVerify(){
+//     if(sex.value != ''){
+//         genderError('');
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+
+
+// // Roles Event Handler
+// function role_verify(){
+//     if(role.value != ''){
+//         roleError('');
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+
+

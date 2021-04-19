@@ -6,10 +6,6 @@ const mongoose = require('mongoose');
 const driverConductorSchema = new mongoose.Schema({
     firstName:{
         type:String
-        // required:true,
-        // trim:true,
-        // min:2,
-        // max:50
     },
     secondName:{
         type:String
@@ -19,8 +15,7 @@ const driverConductorSchema = new mongoose.Schema({
 
     },
     dateOfBirth:{
-        type:Date,
-        default:Date.now
+        type:Date
     },
     drivLic:{
         type:String

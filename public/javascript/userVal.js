@@ -105,9 +105,9 @@ function validate(){
     
 
 //  Regular Expressions
-const nameRegex = /^.{2,50}[A-Za-z]+$/; // Name regular expression, allows Letters only, capital or small
-const usernameExp = /([STC0-9]{5})\w+/; // Regular expression for username. Starts with STC followed by numbers
-const passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{5,}$/;//  regular expression for password field,ensures a minimum of 5 characters, at least one letter, one number and one special character. 
+const nameRegex = /[A-Z][a-z]{2,50}/; // Name regular expression, allows Letters only, capital or small
+const usernameExp = /([STC0-9]{5})/; // Regular expression for username. Starts with STC followed by numbers
+const passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{5,}$/;//  regular expression for password field,ensures a minimum of 5 characters, at least one capital letter, one number and one special character. 
 
 
 // Event Handlers
@@ -122,7 +122,7 @@ function fname_verify(){
     }
     else{
         fname.style.border = '2px solid red';
-        firstNameError('Name should be letters only,atleast 2 characters and \n atmost 50 characters')
+        firstNameError('Name should be letters only,atleast 2 characters \n and atmost 50 characters')
     }
 }
 
@@ -135,7 +135,7 @@ function lname_verify(){
     }
     else{
         lname.style.border = '2px solid red';
-        lastNameError('Name should be letters only,atleast 2 characters and \n atmost 50 characters')
+        lastNameError('Name should be letters only,atleast 2 characters \n and atmost 50 characters')
     }
 }
 
@@ -167,7 +167,7 @@ function userPass_verify(){
 
     else{
         pass.style.border = '2px solid red';
-        passwordError('Password should contain atlease a number,letter and \n special character');
+        passwordError('Password should contain atlease a number,letter \n and a special character');
         pass.focus();
         return false;
     }

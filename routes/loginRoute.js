@@ -12,7 +12,7 @@ router.get('/', (req,res)=>{
 // Check Username and Password on submission
 router.post('/', passport.authenticate('local', {failuerRedirect:'/login'}), (req,res)=>{
     req.session.user = req.user;
-    res.redirect('/home');
+    res.redirect('/worker');
 });
 
 

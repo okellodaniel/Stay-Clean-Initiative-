@@ -11,7 +11,6 @@ a{
 border-radius: 5px;
 background-color: #fff;
 padding: 1rem 2rem;
-overflow-x: auto; 
 
 }
 .panel-head {
@@ -35,7 +34,7 @@ overflow-x: auto;
   
 .action {
 display: flex;
-flex-wrap: wrap;
+/* flex-wrap: wrap; */
 align-items: center;
 justify-content: space-around;
 
@@ -45,11 +44,14 @@ justify-content: space-around;
 .remove{
 font-size: 1.5rem; 
 color: #ec5564; 
+padding:8px;
+margin-left:4px;
 }
 
 /* Delete Icon on Hover */
 .remove:hover {
   color: #c51627;
+  padding:8px;
 
 }
 

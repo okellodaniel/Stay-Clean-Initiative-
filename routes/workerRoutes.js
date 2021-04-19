@@ -57,25 +57,21 @@ router.get('/list', async (req, res) => {
         console.log(err)
         res.status(500).send('Error!,Cannot retrieve the data');
     };
-
-
 });
 
 // Update Driver or Conductor details
 
 router.get('/update/:id',async (req,res)=>{
-
     try{
+    const updateWorker = await Worker.findOne({ _id:req.params.id});    
+    res.render('updateWorker',{worker: updateWorker});
 
-    const updateWorker = await Worker.findOne({ _id:req.params.id})
-    res.status(201).render('updateWorker',{worker: updateWorker})
     }
-
     catch(err){
-        res.status(400).send('Error!, Cannot find Worker');
-    }
-     
- });
+        res.send('Error!, Cannot find Worker')
+    }     
+});
+
 
 // Save updated worker data
 
@@ -93,14 +89,14 @@ router.get('/update/:id',async (req,res)=>{
 
 // Delete Driver or Conductor from the database
 
-router.post('/delete',async (req,res) => {
+router.get('/delete/:id', async (req,res) => {
 
     try{
-        await Worker.deleteOne({ _id:req.body.id });
+        await Worker.findByIdAndDelete({ _id:req.params.id });
         res.redirect('back')
     }
     catch (err){
-        res.status(500).send('Can\'t delete Worker')
+        res.status(500).send("Can't delete Worker")
     };
 
 });
