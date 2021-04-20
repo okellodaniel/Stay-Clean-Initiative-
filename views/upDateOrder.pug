@@ -1,0 +1,45 @@
+extends layout
+block content
+  .container.updateContainer
+    .row
+      .col.updateHeader
+        h5 Update Order information
+    .row.rowUpdate
+      .col.colW
+        form#formUpdate(action = "/order/update?id="+order._id  method="POST")
+          table
+            thead
+              tr
+                th
+                  | Driver Name
+                td
+                  input.form-control.updateInput(name="driverName" value=order.driverName)
+              tr
+                th
+                  | Conductors
+                td
+                  input.form-control.updateInput(name="condNumber" value=order.condNumber)
+              tr
+                th
+                  | Truck Location
+                td
+                  input.form-control.updateInput(name="truckLocation" value=order.truckLocation)
+              tr
+                th
+                  | Next Destination
+                td
+                  input.form-control.updateInput(name="nxtDest" value=order.nxtDest)
+              tr
+                th
+                  | Date
+                td
+                   input.form-control.updateInput(name="date" value=order.date)
+              tr
+                th
+                  | Truck Code Number
+                td
+                   input.form-control.updateInput(name="truckCod" value=order.truckCod)
+         
+          button#bTNTk(type="submit") Update
+          .back
+            a(href="/order/list") Return to list 

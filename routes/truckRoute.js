@@ -49,7 +49,7 @@ router.get('/list',async(req,res)=>{
 
 //Update Truck details
 
-router.post('/update/:id', async (req,res) => {
+router.get('/update/:id', async (req,res) => {
     try{
         const updateTruck = await Truck.findOne({ _id: req.params.id});
         res.status(201).render('updateTruck', {truck: updateTruck});
@@ -66,7 +66,7 @@ router.post('/update',async (req,res) => {
 
     try{
         await Truck.findOneAndUpdate({ _id:req.query.id} , req.body);
-        res.status(201).redirect('truckList');
+        res.status(201).redirect('/truck/list');
     }
 
     catch (err) {
@@ -77,10 +77,9 @@ router.post('/update',async (req,res) => {
 
 
 // Delete a Truck and its details from the database    
-router.post('/delete/:id', async (req,res) =>{
+router.get('/delete/:id', async (req,res) =>{
 
     try{
-
         await Truck.findByIdAndDelete({ _id: req.params.id});
         res.redirect('back');
     }

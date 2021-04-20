@@ -27,7 +27,8 @@ block content
               td #{truck.truckModel}
               td #{truck.truckRegNo}
               td #{truck.truckCode}
-              td
+              td #{truck.truckDriver}
+              td(style="display:flex; justify-content:center; align-items:center;")
                 a.edit(href='/truck/update/' + truck._id)
                   ion-icon(name='create-outline')
                 a.remove(href='/truck/delete/'+truck._id)

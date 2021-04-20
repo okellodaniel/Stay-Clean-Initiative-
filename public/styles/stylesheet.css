@@ -485,38 +485,7 @@
         color:mediumspringgreen;
         
     }
-/*Search Button properties*/
 
-/* Worker List Table
-
-    table{
-        margin:5% auto;
-        border-radius:4px;
-        width:90%;
-    }
-    thead{
-        background-color:rgba(99, 96, 96, 0.753);
-        color:white;
-        text-align:start;
-    }
-    th{
-        padding:5px 20px;
-
-    }
-    tbody{
-        background-color: rgba(243, 242, 239, 0.808);
-        text-align: start   ;
-    }
-    .fa-times,.fa-pencil{
-        padding:5px;
-        border:1px solid rgba(192, 192, 192, 0.555);
-        box-shadow:1px 1px 2px;
-        margin:-5px;
-    }
-    .fa-times:hover,
-    .fa-pencil:hover{
-        background-color: rgba(255, 255, 255, 0.863);
-    } */
 
 /* Order Css */
 
@@ -532,12 +501,14 @@
         text-align: center;
         text-transform: uppercase;
         font-weight: 100;
-        border-bottom: 1px solid silver;;
     }
 
     /* OrderForm */
     #orderForm{
-        margin:7% auto;
+        margin:1% auto;
+        border: 1px solid silver;
+        padding: 30px;
+        border-radius: 8px;;
     }
     .colX,.colY{
         padding: 10px 20px;
@@ -549,6 +520,7 @@
     border:1px solid silver;
     border-radius: 0;
     height:35px;
+    border-radius: 4px;;
     }
 
     #multiple-select:focus,.form-select:focus, .form-control:focus{
@@ -571,13 +543,18 @@
         color:white;
         margin:20px;
         text-align:center;
-        width:500px;
+        width:300px;
         text-align: center;
+        float: right;
+        border-radius: 6px;
     }
+    /* Button on focus */
     .btn_NO:focus{
         outline: 0;
         box-shadow: none;
     }
+
+    /* Button on hover */
     .btn_NO:hover{
         color:white;
         background-color: rgba(13, 139, 180, 0.863);

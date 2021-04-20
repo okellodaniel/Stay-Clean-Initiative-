@@ -24,7 +24,7 @@ block content
             span#tCode
           .col-lg-6
             label(for="assign") Assign Driver 
-            select#assign.form-select(aria-label='Default select example') 
+            select#assign.form-select(aria-label='Default select example' name=truckDriver) 
               option('') 
               if driver.length 
               each worker in driver 

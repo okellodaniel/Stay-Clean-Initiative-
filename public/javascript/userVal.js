@@ -122,7 +122,8 @@ function fname_verify(){
     }
     else{
         fname.style.border = '2px solid red';
-        firstNameError('Name should be letters only,atleast 2 characters \n and atmost 50 characters')
+        firstNameError('Name should be letters only,atleast 2 characters \n and atmost 50 characters');
+        return false;
     }
 }
 
@@ -135,7 +136,8 @@ function lname_verify(){
     }
     else{
         lname.style.border = '2px solid red';
-        lastNameError('Name should be letters only,atleast 2 characters \n and atmost 50 characters')
+        lastNameError('Name should be letters only,atleast 2 characters \n and atmost 50 characters');
+        return false;
     }
 }
 

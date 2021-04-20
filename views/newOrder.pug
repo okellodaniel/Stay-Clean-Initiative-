@@ -4,17 +4,39 @@ block content
     form#orderForm(action="/order/" method="POST" name ="orderForm" onsubmit="return validate()")
       .row.row-2.rov
         .col-12.col-md-12#header
-          h2 New Trip
+          h2 Register New Order
         .col-12.col-md-8.colY
+          label Customer Names *
+          select.form-select(aria-label="Default select example" name ="customerName")
+            option(selected="Select the Customer") Select the Customer *
+            if customer.length
+            each person in customer 
+                option() #{person.customerName} 
+          span#custoMer(style="color:red; font-size:15px;") 
+        .col.col-md-4.colX
+          label(for="date") Date *
+          input#date.form-control(type="date" name="date")
+          span#dAt(style="color:red; font-size:15px;")
+        .col.col-md-6.colX
+          label(for="trucks") Assign Truck to Customer *
+          select#trucks.form-select(aria-label="Default select example" name="truckCod")
+            option(selected = "Select Truck Code Number") Select Truck Code Number *
+            if truck.length
+            each car in truck               
+              option() #{car.truckCode}   
+          span#tcode(style="color:red; font-size:15px;")
+        .col.col-md-5.colX
+          label Drivers *
           select.form-select(aria-label="Default select example" name ="driverName")
-            option(selected="Choose a Driver") Choose a Driver
+            option(selected="Choose a Driver") Choose a Driver *
             if driver.length
             each worker in driver 
                 option() #{worker.firstName} #{worker.secondName} #{worker.position}  
-          span#driv(style="color:red; font-size:15px;")             
+          span#driv(style="color:red; font-size:15px;")                    
         .col-12.col-md-4.colY
+          label Number of Conductors for Truck *
           select.form-select(aria-label="Default select example" name="condNumber")
-            option(selected="" ) Number of Conductors
+            option(selected="Number of Conductors" ) Number of Conductors *
             option(value="1") 1
             option(value="2") 2
             option(value="3") 3
@@ -22,25 +44,13 @@ block content
             option(value="3") 5
           span#cond(style="color:red; font-size:15px;")
         .col-12.col-md-4.colY
-          label(for="location") Current Location
+          label(for="location") Current Truck Location *
           input#location.form-control(type="text" name="truckLocation")
-          span#truck(style="color:red; font-size:15px;")
-        .col.col-md-3.colX
-          label(for="date") Date
-          input#date.form-control(type="date" name="date")
-          span#dAt(style="color:red; font-size:15px;")        
-        .col.col-md-5.colX
-          label(for="nextDest") Next Destination
+          span#truck(style="color:red; font-size:15px;")               
+        .col.col-md-4.colX
+          label(for="nextDest") Next Truck Destination *
           input#nextDest.form-control(type="text" name="nxtDest")
-          span#dest(style="color:red; font-size:15px;")
-        .col.col-md-6.colX
-          label(for="trucks") Truck code Number
-          select#trucks.form-select(aria-label="Default select example" name="truckCod")
-            option(selected = "Select Truck Code Number") Select Truck Code Number
-            if truck.length
-            each car in truck               
-              option(value="CodeNumber:${car.code}") #{car.truckCode}   
-          span#tcode(style="color:red; font-size:15px;")    
+          span#dest(style="color:red; font-size:15px;")  
         .col-12.col-md-12.colY
           button.btn.btn_NO(type="submit") New Trip
 

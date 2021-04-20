@@ -29,24 +29,22 @@ router.post('/',async (req,res) => {
 
 // Fetch customer information from the database
 
-router.get('/list', async (req,res) => {
+router.get('/list', async(req,res) => {
   try{
 
     let customerDetails = await Customer.find();
     res.render('customerList',{customers:customerDetails, title:'Customers List'})
   }
   catch(err){
-
     console.log(err)
     res.status(500).send('Cannot retrieve Customer information')
   };
 });
 
-//update customer Information
-
-router.post('/update/:id', async (req,res) => {
+// update customer Information
+router.get('/update/:id', async (req,res) => {
   try{
-    let updateCustomer = await Customer.findOne({ _id:req.params.id });
+    const updateCustomer = await Customer.findOne({ _id:req.params.id });
     res.status(201).render('updateCustomer',{customer:updateCustomer});
   }
   catch(err){
@@ -67,10 +65,11 @@ router.post ( '/update', async (req,res) => {
 });
 
 
-//delete customer
-router.post ('/delete', async(req,res) => {
+// delete customer from the database
+
+router.get('/delete/:id', async(req,res) => {
   try{
-    await Customer.deleteOne({_id: req.body.id});
+    await Customer.findByIdAndDelete({_id: req.params.id});
     res.redirect('back');
   }
   catch (err) {

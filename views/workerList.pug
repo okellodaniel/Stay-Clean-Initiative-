@@ -32,7 +32,7 @@ block content
               td #{worker.gender}
               td #{worker.dateOfBirth}
               td #{worker.pastincident}
-              td
+              td(style="display:flex; justify-content:center; align-items:center;")
                 a.edit(href='/worker/update/'+worker._id)
                   ion-icon(name='create-outline') 
                 a.remove(href='/worker/delete/'+worker._id)

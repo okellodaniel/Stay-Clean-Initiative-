@@ -79,7 +79,7 @@ router.get('/update/:id',async (req,res)=>{
     
         try{
         await Worker.findOneAndUpdate({ _id: req.query.id },req.body);
-        res.redirect('/worker');
+        res.redirect('/worker/list');
     }
     catch (err) {
         res.status(400).send('Error!, Failed to update Worker');

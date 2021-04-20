@@ -1,0 +1,49 @@
+extends layout
+block content
+    .container.updateContainer
+      .row
+        .col.updateHeader
+          h5 Update Customer Details
+      .row.rowUpdate
+        .col.colW
+          form#formUpdate(action = "/customer/update?id="+customer._id  method="POST")
+            table
+              thead
+                tr
+                  th
+                    | Customer's Names
+                  td
+                    input.form-control.updateInput(name="customerName" value=customer.customerName)
+                tr
+                  th
+                    | Location
+                  td
+                    input.form-control.updateInput(name="location" value=customer.location)
+                tr
+                  th
+                    | Trucks Needed
+                  td
+                    input.form-control.updateInput(name="truckNumber" value=customer.truckNumber)
+                tr
+                  th
+                    | Phone Number
+                  td
+                    input.form-control.updateInput(name="phoneNumber" value=customer.phone_Number)
+                tr
+                  th
+                    | Service Type
+                  td
+                    input.form-control.updateInput(name="serviceType" value=customer.serviceType)
+                tr
+                  th
+                    | Past Incidents
+                  td
+                    input.form-control.updateInput(name="national_Id" value=customer.national_Id)
+                tr
+                  th
+                    | Payment
+                  td
+                     input.form-control.updateInput(name="paymentType" value=customer.paymentType)                    
+            button#bTNcUp(type="submit") Update
+            .back
+              a(href="/customer/list") Return to list 

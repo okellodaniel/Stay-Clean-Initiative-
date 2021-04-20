@@ -7,28 +7,28 @@ block content
           .col-md-12.headingDC
             | Driver and Conductor Registration
           .col-md-6.col-md-6DC
-            label(for='Firstname') First Name
+            label(for='Firstname') First Name *
             input#Firstname.form-control.form-controlDC(type='text' name='firstName' placeholder='First Name')
             span#fName
           .col-md-6.col-md-6DC
-            label(for='Secondname') Last Name
+            label(for='Secondname') Last Name *
             input#Secondname.form-control.form-controlDC(type='text' name='secondName' placeholder='Last Name')
             span#lName
           .col-md-6.col-md-6DC
-            label(for='nationalid') National Identity Number
+            label(for='nationalid') National Identity Number *
             input#nationalid.form-control.form-controlDC(type='text' name='natId' placeholder='NIN')
             span#valNIN
           .col-md-6.col-md-6DC
-            label(for='license') Driving License
+            label(for='license') Driving License *
             input#license.form-control.form-controlDC(type='text' name='drivLic' placeholder='License number')
             span#drleRR
           .col-md-12.col-md-12DC
-            label(for='dateofbirth') Date of Birth
+            label(for='dateofbirth') Date of Birth *
             input#dateofbirth(type='date' name='dateOfBirth' value="date")
             span#dOB
           .col-md-4.col-md-4DC
             fieldset
-              legend Gender
+              legend Gender *
               label(for='Male') Male
               input#male(type='radio' name='gender' value='Male')
               label(for='Female') Female
@@ -46,14 +46,14 @@ block content
               span#wIncid
           .col-md-4.col-md-4DC
             fieldset
-              legend Driver or Conductor
+              legend Driver or Conductor *
               label(for='driver') Driver
               input#driver(type='radio' name='position' value='Driver')
               label(for='conductor') Conductor
               input#conductor(type='radio' name='position' value='Conductor')
               span#role
           .col-md-6.col-md-6DC.form-group
-            label(for='exampleFormControlFile1') Load Photo
+            label(for='exampleFormControlFile1') Load Photo *
             input#exampleFormControlFile1.form-control-file(type='file' name='avatar')
             span#wUpload
           .col-md-12.col-md-12DC

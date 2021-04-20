@@ -4,6 +4,7 @@ const router = express.Router();
 const Order = require('../models/Order');
 const Truck = require('../models/Truck'); 
 const Worker = require('../models/Worker');
+const Customer = require('../models/Customer');
 // const passport = require('passport');
 
 
@@ -11,10 +12,11 @@ const Worker = require('../models/Worker');
 
 router.get('/', async(req,res) => 
 {   
+    const customers = await Customer.find();
     const drivers = await Worker.find();
     const trucks = await Truck.find();
     console.log(trucks);
-    res.render('newOrder',{driver:drivers, truck:trucks, title:'New Order'});
+    res.render('newOrder',{driver:drivers, truck:trucks, customer:customers, title:'New Order'});
 });
 
 // Save a new order request to the database
@@ -25,7 +27,6 @@ router.post('/', async(req,res) => {
         const newOrder = new Order(req.body);
         await newOrder.save();
     }
-
     catch (err) {
         console.log(err);
         res.status(400).send('Error, Something went wrong');

@@ -32,7 +32,7 @@ block content
               td  #{customer.serviceType} 
               td  #{customer.national_Id}
               td  #{customer.paymentType}
-              td
+              td(style="display:flex; justify-content:center; align-items:center;")
                 a.edit(href='/customer/update/'+customer._id)
                   ion-icon(name='create-outline')
                 a.remove(href='/customer/delete/'+customer._id)

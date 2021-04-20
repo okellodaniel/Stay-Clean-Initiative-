@@ -1,47 +1,39 @@
 extends layout
 block content
-    .container.updateContainer
-      .row
-        .col.updateHeader
-          h5 Update Truck information
-      .row.rowUpdate
-        .col.colW
-          form#formUpdate(action = "/truck/update?id="+truck._id  method="POST")
-            table
-              thead
-                tr
-                  th
-                    | Truck Make
-                  td
-                    input.form-control.updateInput(name="firstName" value="truck.firstName")
-                tr
-                  th
-                    | Last Name
-                  td
-                    input.form-control.updateInput(name="lastName" value="worker.secondName")
-                tr
-                  th
-                    | NIN
-                  td
-                    input.form-control.updateInput(name="nin" value="worker.natId")
-                tr
-                  th
-                    | Gender
-                  td.buttonUpdate
-                    label(for="maleUpdate") Male 
-                    input#maleUpdate(type="radio" value="male" checked = worker.gender === "male" name ="gender")
-                    label(for="femaleUpdate")  Female 
-                    input#femaleUpdate(type="radio" value ="female" checked = worker.gender === "female" name="gender")
-                tr
-                  th
-                    | Drivers license
-                  td
-                    input.form-control.updateInput(name="drivLic" value = "worker.drivLic")
-                tr
-                  th
-                    | Role
-                  td
-                    select.formSelect(name="role")
-                      option.updateInput(value="driver" selected = worker.position === "driver")  Driver
-                      option.updateInput(value="conductor" selected = worker.position === "conductor")  Conductor
-            button#bTN(type="submit") Update
+  .container.updateContainer
+    .row
+      .col.updateHeader
+        h5 Update Truck information
+    .row.rowUpdate
+      .col.colW
+        form#formUpdate(action = "/truck/update?id="+truck._id  method="POST")
+          table
+            thead
+              tr
+                th
+                  | Manufacturer
+                td
+                  input.form-control.updateInput(name="firstName" value=truck.truckMake)
+              tr
+                th
+                  | Vehicle Model
+                td
+                  input.form-control.updateInput(name="lastName" value=truck.truckModel)
+              tr
+                th
+                  | Registration Number
+                td
+                  input.form-control.updateInput(name="nin" value=truck.truckRegNo)
+              tr
+                th
+                  | Truck Code
+                td
+                  input.form-control.updateInput(name="drivLic" value=truck.truckCode)
+              tr
+                th
+                  | Driver
+                td
+                   input.form-control.updateInput(name="drivLic" value=truck.truckDriver)
+          button#bTNTk(type="submit") Update
+          .back
+            a(href="/truck/list") Return to list 

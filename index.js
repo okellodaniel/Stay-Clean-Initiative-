@@ -2,14 +2,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const session = require('express-session');
+// Express-Session middleware, save session cookie
+const expressSession = require('express-session')({
+    secret:'secret',
+    resave:false,
+    saveUninitialized:true
+});
 
-
-// const expressSession = require('express-session')({
-//     secret:'secret',
-//     resave:false,
-//     saveUninitialized:true
-// }); 
+// Instatiations
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -18,17 +18,6 @@ app.use(express.json());
 
 // Import user model
 const User = require('./models/User');
-
-//Instanciating
-
-
-// Express-Session middleware, save session cookie
-app.use(session({
-    secret:'secret',
-    resave:false,
-    saveUninitialized:false
-}));
-
 
 // import routes
 const orderRoute = require('./routes/orderRoutes');
@@ -59,16 +48,16 @@ mongoose.connection
     console.log(`connection error:${err.message}`)
 });
 
-//Configuration for templating Engine
+// Configuration for templating Engine
 app.set('view engine','pug');
 app.set('views','./views');
 
 
-//middleware
+// middleware
 
 app.use(express.static('public'));
-app.use('/Public/images',express.static(__dirname + '/Public/images'));
-// app.use(expressSession);
+app.use('/Public/images',express.static(__dirname + '/Public'));
+app.use(expressSession);
 
 // Initializing  passport module and connecting it to our session
 app.use(passport.initialize());
@@ -102,7 +91,7 @@ app.get('/',(req,res)=>{
 });
 
 // Sign out route
-app.post('/logout',(req,res)=>{
+app.get('/logout',(req,res)=>{
     if(req.session){
         req.session.destroy((err)=>{
             if(err){
