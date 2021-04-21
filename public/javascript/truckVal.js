@@ -23,20 +23,27 @@ const truckCodeError = (message)=>{
     truckCErr.innerText = message;
 }
 
+// Truck Driver Error Message
+const truckDrErr = (message)=>{
+    const trDErr = document.getElementById('tdriv');
+    trDErr.innerText = message;
+}
+
 // Accessing fields of the html document
 const truckMake = document.truckReg.truckMake;
 const truckModel = document.truckReg.truckModel;
 const truckRegNum = document.truckReg.truckRegNo;
 const truckCode = document.truckReg.truckCode;
+const truckDriv = document.truckReg.servType;
 
 // Add Event listeners
 truckMake.addEventListener('blur',truckMake_verify,true);
 truckModel.addEventListener('blur',truckModel_verify,true);
 truckRegNum.addEventListener('blur',truckReg_verify,true);
 truckCode.addEventListener('blur',truckCode_verify,true);
+truckDriv.addEventListener('blur',truckDriv_verify,true);
 
 // Validations
-
 function validate(){
 
     // Truck Make validation
@@ -63,7 +70,6 @@ function validate(){
         return false;
     }
 
-
     // truck code number validation
     if(truckCode.value == ''){
         truckCode.style.border = '2px solid red';
@@ -71,15 +77,20 @@ function validate(){
         truckCode.focus();
         return false;
     }
+
+    // truck code number validation
+    if(truckDriv.value == 'Truck service *'){
+        truckDrErr ('Please Select service Type');
+        truckDriv.focus();
+        return false;
+    }
 }
 
 
 // Regex Equations
-
 const truckCodeRegex = /([A-Z]{3}[0-9]{3})/;
 
 // Event Handlers
-
 // Truck make Event Handler
 function truckMake_verify(){
     if(truckMake.value != ''){
@@ -137,6 +148,19 @@ function truckCode_verify(){
         truckCode.style.border = '2px solid red';
         truckCodeError('Please fill in the field');
         truckCode.focus();
+        return false;
+    }
+}
+
+// Truck Driver field verification Handler
+function truckDriv_verify(){
+    if(truckDriv.value != 'Truck service *'){
+        truckDriv.style.border = '1px solid green';
+        truckDrErr('');
+        return true;
+    }
+    else{
+        truckDriv.focus();
         return false;
     }
 }

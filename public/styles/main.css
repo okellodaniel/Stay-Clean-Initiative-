@@ -46,18 +46,20 @@ font-size: 1.5rem;
 color: #ec5564; 
 padding:8px;
 margin-left:4px;
+align-self: center;
 }
 
 /* Delete Icon on Hover */
 .remove:hover {
   color: #c51627;
-  padding:8px;
 
 }
 
 /* Update Icon */
 .edit {
 color: #f5ba45;
+padding:5px;
+align-self: center;
 }
 .edit:hover {
   color: #c9890b; 
@@ -143,7 +145,7 @@ box-shadow: 2px 2px 6px silver;
 }
 
 /* Update Button properties */
-#bTN{
+#bTN, #bTNTk,#bTNcUp{
   color:white;
   background: rgb(0, 182, 152);
   padding:5px 20px;

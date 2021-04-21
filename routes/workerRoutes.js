@@ -30,7 +30,7 @@ router.post('/', upload.single('avatar'), async (req,res) => {
 
     try{
         const worker = new Worker(req.body);
-        worker.imageupload = req.file.path;
+        worker.avatar = req.file.path;
         await worker.save();
         res.redirect('/worker/');
     }
@@ -75,7 +75,7 @@ router.get('/update/:id',async (req,res)=>{
 
 // Save updated worker data
 
-    router.post('/update',async (req,res) => {     
+    router.post('/update',async (req,res) => {    
     
         try{
         await Worker.findOneAndUpdate({ _id: req.query.id },req.body);

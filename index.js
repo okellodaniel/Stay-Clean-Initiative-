@@ -1,24 +1,19 @@
-//dependencies
+// dependencies
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+
+// Configure environment variable
+require('dotenv').config();
 // Express-Session middleware, save session cookie
 const expressSession = require('express-session')({
     secret:'secret',
     resave:false,
-    saveUninitialized:true
+    saveUninitialized:false
 });
 
-// Instatiations
-const app = express();
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-
 // Import user model
-const User = require('./models/User');
-
+const RegUser = require('./models/User');
 // import routes
 const orderRoute = require('./routes/orderRoutes');
 const truckRoute = require('./routes/truckRoute');
@@ -28,9 +23,8 @@ const signupRoute= require('./routes/userRoutes');
 const homeRoute = require('./routes/homeRoute');
 const loginRoute = require('./routes/loginRoute');
 
-
-// Configure environment variable
-require('dotenv').config();
+// Instantiations
+const app = express();
 
 //Database configuration
 mongoose.connect(process.env.DATABASE,{
@@ -52,22 +46,23 @@ mongoose.connection
 app.set('view engine','pug');
 app.set('views','./views');
 
-
-// middleware
-
-app.use(express.static('public'));
-app.use('/Public/images',express.static(__dirname + '/Public'));
-app.use(expressSession);
+// Middle ware
+app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
 // Initializing  passport module and connecting it to our session
+app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // Passport configurations
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+passport.use(RegUser.createStrategy());
+passport.serializeUser(RegUser.serializeUser());
+passport.deserializeUser(RegUser.deserializeUser());
+
+// middleware for serving static files
+app.use(express.static('public'));
+app.use('/public/images',express.static(__dirname + '/public'));
 
 //routes middleware
 app.use('/customer',customerRoute);
@@ -76,8 +71,7 @@ app.use('/order',orderRoute);
 app.use('/worker',workerRoute);
 app.use('/signup',signupRoute);
 app.use('/home',homeRoute);
-app.use('/login',loginRoute)
-
+app.use('/login',loginRoute);
 
 //Request time logger
 app.use((req,res,next)=>{
@@ -98,11 +92,12 @@ app.get('/logout',(req,res)=>{
                 console.log('Sign out error');
             }
             else{
-                return res.redirect('/login');
+                return res.redirect('/');
             }
         });
     }
 });
+
 
 //Undefined route
 app.get('*',(req,res)=>{
@@ -111,5 +106,4 @@ app.get('*',(req,res)=>{
 
 //Server configuration
 port = process.env.PORT || 3000;
-
 app.listen(port, ()=> console.log(`listening on port ${port}`));

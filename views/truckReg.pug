@@ -20,15 +20,15 @@ block content
             span#t_reg
           .col-lg-6
             label(for="code") Truck Code Number
-            input#code.form-control.form-truck(type="text" name="truckCode" placeholder="2313312")
+            input#code.form-control.form-truck(type="text" name="truckCode" placeholder="AAA555")
             span#tCode
           .col-lg-6
-            label(for="assign") Assign Driver 
-            select#assign.form-select(aria-label='Default select example' name=truckDriver) 
-              option('') 
-              if driver.length 
-              each worker in driver 
-                option() #{worker.firstName} #{worker.secondName} #{worker.position} 
+            label(for="assign") Service Type
+            select.form-select(aria-label="Default select example" name="servType")
+              option(selected=" " ) Truck service *
+              option(value="Garbage") Garbage
+              option(value="Sewage") Sewage
+            span#tdriv(style="color:red; font-size:15px;")
           .col-md-12
             button.btn.btn-primary#truckbtn(type="submit") Register
 

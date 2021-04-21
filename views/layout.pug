@@ -55,19 +55,21 @@ html(lang="en")
                     button.list-group-item.list-group-item-action(type="button")
                       a(href="/worker/list") Workers
                     button.list-group-item.list-group-item-action(type="button")
+                      a(href="/truck/list") Trucks
+                    button.list-group-item.list-group-item-action(type="button")
                       a(href="/customer/list") Customers
                     button.list-group-item.list-group-item-action(type="button")
-                      a(href="/truck/list") Trucks
+                      a(href="/order/list") Orders
               .accordion-item.accordion-flush
                 h2#headingFour.accordion-header
                   button.accordion-button.collapsed(type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour")
                     span.fa.fa-line-chart.fasb
-                    | Report Center
+                    | Records Center
                 #collapseFour.accordion-collapse.collapse(aria-labelledby="headingFour" data-bs-parent="#accordionExample")
                   .accordion-body
                     .regList
                       button.list-group-item.list-group-item-action(type="button")
-                        a(href="/order/list") Trips    
+                        a(href="/order/list") Orders   
                       button.list-group-item.list-group-item-action(type="button") Customer calls
                       button.list-group-item.list-group-item-action(type="button") Payments
       .col-sm-12.col-md-12.main

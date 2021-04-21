@@ -2,32 +2,29 @@ extends layout
 block content
   .panel
     .panel-head
-      h6.title Truck List
+      h6.title Salaries
     span.newCust
-      a(href='/truck/') Register A new Truck
+      a(href='/home') Return Home
     #searchBtn.input-group
       .form-outline
         input#form1.form-control(type='search' name='truckCode' placeholder='Enter Truck Code')
       button#SBtn.btn.btn-primary(type='button')
-        i.fa.fa-search  
+        i.fa.fa-search
     .panel-body
       table.zebra
         tbody
           tr
-            th Manufacturer
-            th Vehicle Model
-            th Registration Number
-            th Truck Code
-            th Service Type
-            th Action
-          if trucks.length
-          each truck in trucks
+            th Worker Names
+            th Role
+            th Salary
+          if employee.length
+          each worker in employee
             tr
               td #{truck.truckMake}
               td #{truck.truckModel}
               td #{truck.truckRegNo}
               td #{truck.truckCode}
-              td #{truck.servType}
+              td #{truck.truckDriver}
               td(style="display:flex; justify-content:center; align-items:center;")
                 a.edit(href='/truck/update/' + truck._id)
                   ion-icon(name='create-outline')

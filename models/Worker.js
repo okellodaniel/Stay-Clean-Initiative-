@@ -1,6 +1,5 @@
 //dependencies
 const mongoose = require('mongoose');
-// const passportLocalMongoose = require('passport-local-mongoose');
 
 //Registration Schema
 const driverConductorSchema = new mongoose.Schema({
@@ -31,7 +30,5 @@ const driverConductorSchema = new mongoose.Schema({
     }]
 })
 
-//setup the plugin to use passport
-// driverConductorSchema.plugin(passportLocalMongoose);
 //Associating the driverConductor schema with the actual collection name
 module.exports = mongoose.model('Worker',driverConductorSchema);

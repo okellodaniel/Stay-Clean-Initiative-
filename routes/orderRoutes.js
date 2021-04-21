@@ -5,8 +5,6 @@ const Order = require('../models/Order');
 const Truck = require('../models/Truck'); 
 const Worker = require('../models/Worker');
 const Customer = require('../models/Customer');
-// const passport = require('passport');
-
 
 // Respond to request when user hits end point '/'
 
@@ -26,6 +24,7 @@ router.post('/', async(req,res) => {
     try{
         const newOrder = new Order(req.body);
         await newOrder.save();
+        res.redirect('/order');
     }
     catch (err) {
         console.log(err);

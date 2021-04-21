@@ -13,27 +13,27 @@ block content
                 th
                   | Manufacturer
                 td
-                  input.form-control.updateInput(name="firstName" value=truck.truckMake)
+                  input.form-control.updateInput(name="truckMake" value=truck.truckMake)
               tr
                 th
                   | Vehicle Model
                 td
-                  input.form-control.updateInput(name="lastName" value=truck.truckModel)
+                  input.form-control.updateInput(name="truckModel" value=truck.truckModel)
               tr
                 th
                   | Registration Number
                 td
-                  input.form-control.updateInput(name="nin" value=truck.truckRegNo)
+                  input.form-control.updateInput(name="truckRegNo" value=truck.truckRegNo)
               tr
                 th
                   | Truck Code
                 td
-                  input.form-control.updateInput(name="drivLic" value=truck.truckCode)
+                  input.form-control.updateInput(name="truckCode" value=truck.truckCode)
               tr
                 th
-                  | Driver
+                  | Service Type
                 td
-                   input.form-control.updateInput(name="drivLic" value=truck.truckDriver)
+                   input.form-control.updateInput(name="servType" value=truck.servType)
           button#bTNTk(type="submit") Update
           .back
             a(href="/truck/list") Return to list 

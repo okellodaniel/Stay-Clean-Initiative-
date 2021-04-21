@@ -6,7 +6,7 @@ block content
           h5 Update Worker information
       .row.rowUpdate
         .col.colT
-          img#updateImg(src="/"+worker.imageupload width="150px" height="170px")
+          img#updateImg(src="/"+worker.avatar width="200px" height="230px")
         .col.colW
           form#formUpdate(action = "/worker/update?id="+worker._id  method="POST")
             table

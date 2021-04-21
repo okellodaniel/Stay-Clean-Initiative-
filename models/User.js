@@ -13,5 +13,5 @@ const userSchema = new mongoose.Schema({
 //Plugin setup to use passport
 userSchema.plugin(passportLocalMongoose);
 
-//Exporting the user SCHEMA
+// Associating the Schema with the actual collection name
 module.exports = mongoose.model('User',userSchema);

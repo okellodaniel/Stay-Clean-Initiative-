@@ -1,3 +1,4 @@
+// Dependencies
 const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
@@ -19,5 +20,5 @@ const orderSchema = new mongoose.Schema({
 });
 
 
-// Export Order Schema
+// Associating the Order Schema with the actual collection name
 module.exports = mongoose.model('Order',orderSchema);

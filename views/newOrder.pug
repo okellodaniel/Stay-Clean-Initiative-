@@ -8,33 +8,33 @@ block content
         .col-12.col-md-8.colY
           label Customer Names *
           select.form-select(aria-label="Default select example" name ="customerName")
-            option(selected="Select the Customer") Select the Customer *
+            option(selected="Select a Customer") Select the Customer *
             if customer.length
             each person in customer 
-                option() #{person.customerName} 
+                option() #{person.customerName}   
           span#custoMer(style="color:red; font-size:15px;") 
         .col.col-md-4.colX
           label(for="date") Date *
           input#date.form-control(type="date" name="date")
           span#dAt(style="color:red; font-size:15px;")
         .col.col-md-6.colX
-          label(for="trucks") Assign Truck to Customer *
+          label(for="trucks") Truck code Number *
           select#trucks.form-select(aria-label="Default select example" name="truckCod")
             option(selected = "Select Truck Code Number") Select Truck Code Number *
             if truck.length
             each car in truck               
               option() #{car.truckCode}   
           span#tcode(style="color:red; font-size:15px;")
-        .col.col-md-5.colX
-          label Drivers *
+        .col-12.col-md-6.colY
+          label Driver Names *
           select.form-select(aria-label="Default select example" name ="driverName")
             option(selected="Choose a Driver") Choose a Driver *
             if driver.length
             each worker in driver 
-                option() #{worker.firstName} #{worker.secondName} #{worker.position}  
-          span#driv(style="color:red; font-size:15px;")                    
-        .col-12.col-md-4.colY
-          label Number of Conductors for Truck *
+              option() #{worker.firstName} #{worker.secondName} #{worker.position}
+          span#driv(style="color:red; font-size:15px;")                   
+        .col-12.col-md-3.colY
+          label Conductor Number *
           select.form-select(aria-label="Default select example" name="condNumber")
             option(selected="Number of Conductors" ) Number of Conductors *
             option(value="1") 1
@@ -43,14 +43,15 @@ block content
             option(value="3") 4
             option(value="3") 5
           span#cond(style="color:red; font-size:15px;")
-        .col-12.col-md-4.colY
-          label(for="location") Current Truck Location *
+        .col-12.col-md-5.colY
+          label(for="location") Current Location *
           input#location.form-control(type="text" name="truckLocation")
-          span#truck(style="color:red; font-size:15px;")               
+          span#truck(style="color:red; font-size:15px;")             
         .col.col-md-4.colX
-          label(for="nextDest") Next Truck Destination *
+          label(for="nextDest") Next Destination *
           input#nextDest.form-control(type="text" name="nxtDest")
-          span#dest(style="color:red; font-size:15px;")  
+          span#dest(style="color:red; font-size:15px;")
+    
         .col-12.col-md-12.colY
           button.btn.btn_NO(type="submit") New Trip
 
